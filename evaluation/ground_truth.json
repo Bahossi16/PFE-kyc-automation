@@ -1,0 +1,179 @@
+{
+  "description": "Ground Truth Dataset — Projet KYC PFE Master",
+  "version": "1.0",
+  "date_creation": "2026-07-26",
+  "note": "Dataset annoté manuellement pour évaluation scientifique. Documents réels testés sur le système.",
+
+  "ocr_ground_truth": [
+    {
+      "id": "OCR-001",
+      "image": "cin_souibgui_12621583.jpg",
+      "type_document": "CIN",
+      "texte_attendu": {
+        "cin": "12621583",
+        "nom": "سويبقي",
+        "prenom": "دليلة"
+      },
+      "note": "CIN réelle testée avec succès par PaddleOCR"
+    },
+    {
+      "id": "OCR-002",
+      "image": "cin_bennamar_13511348.jpg",
+      "type_document": "CIN",
+      "texte_attendu": {
+        "cin": "13511348",
+        "nom": "بنعمار",
+        "prenom": "وصال"
+      },
+      "note": "CIN réelle testée avec succès par PaddleOCR"
+    },
+    {
+      "id": "OCR-003",
+      "image": "media__1784839503778.jpg",
+      "image_path_full": "C:\\Users\\bahae\\.gemini\\antigravity\\brain\\e35d5f8a-4fec-411f-a99a-7f6fa81e8e12\\.user_uploaded\\media__1784839503778.jpg",
+      "type_document": "CIN",
+      "texte_attendu": {
+        "cin": "02240639",
+        "nom": "مباركي",
+        "prenom": "عمران"
+      },
+      "note": "CIN Mbarki Omrane testée avec succès"
+    },
+    {
+      "id": "OCR-004",
+      "image": "media__1784839822656.jpg",
+      "image_path_full": "C:\\Users\\bahae\\.gemini\\antigravity\\brain\\e35d5f8a-4fec-411f-a99a-7f6fa81e8e12\\.user_uploaded\\media__1784839822656.jpg",
+      "type_document": "FICHE_DE_PAIE",
+      "texte_attendu": {
+        "nom_employe": "MBARKI OMRANE",
+        "salaire_net": 1499.0
+      },
+      "note": "Fiche de paie Technique Transit Transport — Septembre 2020"
+    }
+  ],
+
+  "classification_ground_truth": [
+    {
+      "id": "CLS-001",
+      "image_path_full": "C:\\Users\\bahae\\.gemini\\antigravity\\brain\\e35d5f8a-4fec-411f-a99a-7f6fa81e8e12\\.user_uploaded\\media__1784839503778.jpg",
+      "type_attendu": "CIN"
+    },
+    {
+      "id": "CLS-002",
+      "image_path_full": "C:\\Users\\bahae\\.gemini\\antigravity\\brain\\e35d5f8a-4fec-411f-a99a-7f6fa81e8e12\\.user_uploaded\\media__1784838121932.jpg",
+      "type_attendu": "CIN"
+    },
+    {
+      "id": "CLS-003",
+      "image_path_full": "C:\\Users\\bahae\\.gemini\\antigravity\\brain\\e35d5f8a-4fec-411f-a99a-7f6fa81e8e12\\.user_uploaded\\media__1784838124304.jpg",
+      "type_attendu": "CIN"
+    },
+    {
+      "id": "CLS-004",
+      "image_path_full": "C:\\Users\\bahae\\.gemini\\antigravity\\brain\\e35d5f8a-4fec-411f-a99a-7f6fa81e8e12\\.user_uploaded\\media__1784839822656.jpg",
+      "type_attendu": "FICHE_DE_PAIE"
+    },
+    {
+      "id": "CLS-005",
+      "image_path_full": "D:\\PFE\\images_test\\facture_steg.png",
+      "type_attendu": "FACTURE_STEG"
+    }
+  ],
+
+  "matching_ground_truth": [
+    {
+      "id": "MATCH-001",
+      "description": "CIN valide — client existant dans CBS",
+      "cin_input": "12621583",
+      "nom_input": "سويبقي",
+      "prenom_input": "دليلة",
+      "resultat_attendu": "CONFORME",
+      "client_cbs_attendu": "FC-1001",
+      "label_binaire": 1
+    },
+    {
+      "id": "MATCH-002",
+      "description": "CIN valide — client existant dans CBS",
+      "cin_input": "13511348",
+      "nom_input": "بنعمار",
+      "prenom_input": "وصال",
+      "resultat_attendu": "CONFORME",
+      "client_cbs_attendu": "FC-1002",
+      "label_binaire": 1
+    },
+    {
+      "id": "MATCH-003",
+      "description": "CIN valide — client existant dans CBS avec fiche de paie (anomalie salaire)",
+      "cin_input": "02240639",
+      "nom_input": "مباركي",
+      "prenom_input": "عمران",
+      "resultat_attendu": "DIVERGENCE_MINEURE",
+      "client_cbs_attendu": "FC-3001",
+      "label_binaire": 1,
+      "note": "Salaire CBS=2000 vs Fiche=1499 → anomalie détectée"
+    },
+    {
+      "id": "MATCH-004",
+      "description": "CIN inexistante dans CBS — client introuvable",
+      "cin_input": "99999999",
+      "nom_input": "TEST",
+      "prenom_input": "INCONNU",
+      "resultat_attendu": "ALERTE_NON_TROUVE",
+      "client_cbs_attendu": null,
+      "label_binaire": 0
+    },
+    {
+      "id": "MATCH-005",
+      "description": "CIN valide mais nom complètement différent — fraude potentielle",
+      "cin_input": "12621583",
+      "nom_input": "BEN ALI",
+      "prenom_input": "YOUSSEF",
+      "resultat_attendu": "ALERTE_ECART",
+      "client_cbs_attendu": "FC-1001",
+      "label_binaire": 0,
+      "note": "CIN de Souibgui Dalila utilisée avec un autre nom"
+    },
+    {
+      "id": "MATCH-006",
+      "description": "Nom légèrement different (variante orthographique) — divergence mineure",
+      "cin_input": "12621583",
+      "nom_input": "سويبقي",
+      "prenom_input": "دليله",
+      "resultat_attendu": "CONFORME",
+      "client_cbs_attendu": "FC-1001",
+      "label_binaire": 1,
+      "note": "دليلة vs دليله — variation de la lettre finale, doit être accepté"
+    },
+    {
+      "id": "MATCH-007",
+      "description": "CIN valide latin — correspondance nom latin",
+      "cin_input": "02240639",
+      "nom_input": "MBARKI",
+      "prenom_input": "OMRANE",
+      "resultat_attendu": "CONFORME",
+      "client_cbs_attendu": "FC-3001",
+      "label_binaire": 1
+    },
+    {
+      "id": "MATCH-008",
+      "description": "Nom collé (OCR scan) — Jaro-Winkler doit récupérer",
+      "cin_input": "02240639",
+      "nom_input": "MBARKIOMRANE",
+      "prenom_input": "",
+      "resultat_attendu": "CONFORME",
+      "client_cbs_attendu": "FC-3001",
+      "label_binaire": 1,
+      "note": "Cas réel observé sur la fiche de paie scannée"
+    }
+  ],
+
+  "jaro_winkler_benchmark": [
+    {"s1": "سويبقي دليلة",  "s2": "سويبقي دليلة",  "score_attendu_min": 99.0, "paire": "identique arabe"},
+    {"s1": "SOUIBGUI DALILA", "s2": "SOUIBGUI DALILA", "score_attendu_min": 99.0, "paire": "identique latin"},
+    {"s1": "MBARKI OMRANE",   "s2": "MBARKIOMRANE",   "score_attendu_min": 90.0, "paire": "nom collé scan"},
+    {"s1": "BEN AMOR",       "s2": "BENAMOR",         "score_attendu_min": 90.0, "paire": "espace manquant"},
+    {"s1": "GHARBI",         "s2": "GHERBI",           "score_attendu_min": 80.0, "paire": "variante orthographique"},
+    {"s1": "MASSAOUD",       "s2": "MASOUD",           "score_attendu_min": 80.0, "paire": "double lettre manquante"},
+    {"s1": "TRABELSI",       "s2": "BEN ALI",          "score_attendu_min": 0.0,  "score_max": 50.0, "paire": "noms complètement différents"}
+  ]
+}

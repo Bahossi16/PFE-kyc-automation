@@ -1,0 +1,31 @@
+# Environnements virtuels
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Fichiers de base de données locaux (SQLite)
+*.db
+*.sqlite
+
+# Dossiers d'images temporaires et uploads
+uploads/
+images_temp/
+images_test/
+scratch/
+
+# Fichiers générés temporaires
+*.pdf
+*.docx
+*.txt
+*.png
+*.jpg
+*.jpeg
+*.html
+!templates/*.html
+!evaluation/*.html
+
+# Configurations locales
+.env
+.idea/
+.vscode/

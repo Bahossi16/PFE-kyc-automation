@@ -1,0 +1,406 @@
+{
+  "date_evaluation": "2026-07-26 01:35:39",
+  "ocr": {
+    "cas_testes": 4,
+    "champs_testes": 11,
+    "CER_moyen": 0.007,
+    "WER_moyen": 0.0909,
+    "CER_pct": 0.7,
+    "WER_pct": 9.1,
+    "details": [
+      {
+        "id": "OCR-001",
+        "type": "CIN",
+        "champs": [
+          {
+            "champ": "cin",
+            "reference": "12621583",
+            "obtenu": "12621583",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          },
+          {
+            "champ": "nom",
+            "reference": "سويبقي",
+            "obtenu": "سويبقي",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          },
+          {
+            "champ": "prenom",
+            "reference": "دليلة",
+            "obtenu": "دليلة",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "OCR-002",
+        "type": "CIN",
+        "champs": [
+          {
+            "champ": "cin",
+            "reference": "13511348",
+            "obtenu": "13511348",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          },
+          {
+            "champ": "nom",
+            "reference": "بنعمار",
+            "obtenu": "بنعمار",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          },
+          {
+            "champ": "prenom",
+            "reference": "وصال",
+            "obtenu": "وصال",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "OCR-003",
+        "type": "CIN",
+        "champs": [
+          {
+            "champ": "cin",
+            "reference": "02240639",
+            "obtenu": "02240639",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          },
+          {
+            "champ": "nom",
+            "reference": "مباركي",
+            "obtenu": "مباركي",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          },
+          {
+            "champ": "prenom",
+            "reference": "عمران",
+            "obtenu": "عمران",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "OCR-004",
+        "type": "FICHE_DE_PAIE",
+        "champs": [
+          {
+            "champ": "nom_employe",
+            "reference": "MBARKI OMRANE",
+            "obtenu": "MBARKIOMRANE",
+            "CER": 0.0769,
+            "WER": 1.0,
+            "correct": false
+          },
+          {
+            "champ": "salaire_net",
+            "reference": "1499.0",
+            "obtenu": "1499.0",
+            "CER": 0.0,
+            "WER": 0.0,
+            "correct": true
+          }
+        ]
+      }
+    ]
+  },
+  "classification": {
+    "cas_testes": 5,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "accuracy_pct": 100.0,
+    "f1_pct": 100.0,
+    "matrice_confusion": {
+      "CIN": {
+        "CIN": 3,
+        "FICHE_DE_PAIE": 0,
+        "FACTURE_STEG": 0,
+        "AUTRE": 0
+      },
+      "FICHE_DE_PAIE": {
+        "CIN": 0,
+        "FICHE_DE_PAIE": 1,
+        "FACTURE_STEG": 0,
+        "AUTRE": 0
+      },
+      "FACTURE_STEG": {
+        "CIN": 0,
+        "FICHE_DE_PAIE": 0,
+        "FACTURE_STEG": 1,
+        "AUTRE": 0
+      },
+      "AUTRE": {
+        "CIN": 0,
+        "FICHE_DE_PAIE": 0,
+        "FACTURE_STEG": 0,
+        "AUTRE": 0
+      }
+    },
+    "details": [
+      {
+        "id": "CLS-001",
+        "attendu": "CIN",
+        "predit": "CIN",
+        "correct": true,
+        "scores": {
+          "CIN": 0,
+          "PASSEPORT": 0,
+          "FACTURE_STEG": 0,
+          "FACTURE_SONEDE": 0,
+          "FACTURE_TELECOM": 0,
+          "FICHE_DE_PAIE": 0,
+          "CONTRAT_BAIL": 0
+        }
+      },
+      {
+        "id": "CLS-002",
+        "attendu": "CIN",
+        "predit": "CIN",
+        "correct": true,
+        "scores": {
+          "CIN": 0,
+          "PASSEPORT": 0,
+          "FACTURE_STEG": 0,
+          "FACTURE_SONEDE": 0,
+          "FACTURE_TELECOM": 0,
+          "FICHE_DE_PAIE": 0,
+          "CONTRAT_BAIL": 0
+        }
+      },
+      {
+        "id": "CLS-003",
+        "attendu": "CIN",
+        "predit": "CIN",
+        "correct": true,
+        "scores": {
+          "CIN": 0,
+          "PASSEPORT": 0,
+          "FACTURE_STEG": 0,
+          "FACTURE_SONEDE": 0,
+          "FACTURE_TELECOM": 0,
+          "FICHE_DE_PAIE": 0,
+          "CONTRAT_BAIL": 0
+        }
+      },
+      {
+        "id": "CLS-004",
+        "attendu": "FICHE_DE_PAIE",
+        "predit": "FICHE_DE_PAIE",
+        "correct": true,
+        "scores": {
+          "CIN": 0,
+          "PASSEPORT": 0,
+          "FACTURE_STEG": 0,
+          "FACTURE_SONEDE": 0,
+          "FACTURE_TELECOM": 0,
+          "FICHE_DE_PAIE": 4,
+          "CONTRAT_BAIL": 0
+        }
+      },
+      {
+        "id": "CLS-005",
+        "attendu": "FACTURE_STEG",
+        "predit": "FACTURE_STEG",
+        "correct": true,
+        "scores": {
+          "CIN": 0,
+          "PASSEPORT": 0,
+          "FACTURE_STEG": 5,
+          "FACTURE_SONEDE": 0,
+          "FACTURE_TELECOM": 0,
+          "FICHE_DE_PAIE": 0,
+          "CONTRAT_BAIL": 0
+        }
+      }
+    ]
+  },
+  "matching_identite": {
+    "cas_testes": 8,
+    "seuil_jw": 75.0,
+    "TP": 6,
+    "FP": 0,
+    "FN": 0,
+    "TN": 2,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "ROC_AUC": 1.0,
+    "precision_pct": 100.0,
+    "recall_pct": 100.0,
+    "f1_pct": 100.0,
+    "roc_fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "roc_tpr": [
+      0.0,
+      0.16666666666666666,
+      0.3333333333333333,
+      0.5,
+      0.6666666666666666,
+      0.8333333333333334,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "details": [
+      {
+        "id": "MATCH-001",
+        "description": "CIN valide — client existant dans CBS",
+        "score_jw": 100.0,
+        "label_reel": 1,
+        "predit_positif": true,
+        "correct": true
+      },
+      {
+        "id": "MATCH-002",
+        "description": "CIN valide — client existant dans CBS",
+        "score_jw": 100.0,
+        "label_reel": 1,
+        "predit_positif": true,
+        "correct": true
+      },
+      {
+        "id": "MATCH-003",
+        "description": "CIN valide — client existant dans CBS avec fiche de paie (anomalie salaire)",
+        "score_jw": 100.0,
+        "label_reel": 1,
+        "predit_positif": true,
+        "correct": true
+      },
+      {
+        "id": "MATCH-004",
+        "description": "CIN inexistante dans CBS — client introuvable",
+        "score_jw": 0.0,
+        "label_reel": 0,
+        "predit_positif": false,
+        "correct": true
+      },
+      {
+        "id": "MATCH-005",
+        "description": "CIN valide mais nom complètement différent — fraude potentielle",
+        "score_jw": 43.33,
+        "label_reel": 0,
+        "predit_positif": false,
+        "correct": true
+      },
+      {
+        "id": "MATCH-006",
+        "description": "Nom légèrement different (variante orthographique) — divergence mineure",
+        "score_jw": 96.67,
+        "label_reel": 1,
+        "predit_positif": true,
+        "correct": true
+      },
+      {
+        "id": "MATCH-007",
+        "description": "CIN valide latin — correspondance nom latin",
+        "score_jw": 100.0,
+        "label_reel": 1,
+        "predit_positif": true,
+        "correct": true
+      },
+      {
+        "id": "MATCH-008",
+        "description": "Nom collé (OCR scan) — Jaro-Winkler doit récupérer",
+        "score_jw": 98.46,
+        "label_reel": 1,
+        "predit_positif": true,
+        "correct": true
+      }
+    ]
+  },
+  "benchmark_jaro_winkler": {
+    "paires_testees": 7,
+    "paires_correctes": 6,
+    "accuracy": 0.8571,
+    "accuracy_pct": 85.7,
+    "details": [
+      {
+        "paire": "identique arabe",
+        "s1": "سويبقي دليلة",
+        "s2": "سويبقي دليلة",
+        "score": 100.0,
+        "ok": true,
+        "attendu_min": 99.0
+      },
+      {
+        "paire": "identique latin",
+        "s1": "SOUIBGUI DALILA",
+        "s2": "SOUIBGUI DALILA",
+        "score": 100.0,
+        "ok": true,
+        "attendu_min": 99.0
+      },
+      {
+        "paire": "nom collé scan",
+        "s1": "MBARKI OMRANE",
+        "s2": "MBARKIOMRANE",
+        "score": 98.46,
+        "ok": true,
+        "attendu_min": 90.0
+      },
+      {
+        "paire": "espace manquant",
+        "s1": "BEN AMOR",
+        "s2": "BENAMOR",
+        "score": 97.08,
+        "ok": true,
+        "attendu_min": 90.0
+      },
+      {
+        "paire": "variante orthographique",
+        "s1": "GHARBI",
+        "s2": "GHERBI",
+        "score": 91.11,
+        "ok": true,
+        "attendu_min": 80.0
+      },
+      {
+        "paire": "double lettre manquante",
+        "s1": "MASSAOUD",
+        "s2": "MASOUD",
+        "score": 94.17,
+        "ok": true,
+        "attendu_min": 80.0
+      },
+      {
+        "paire": "noms complètement différents",
+        "s1": "TRABELSI",
+        "s2": "BEN ALI",
+        "score": 67.98,
+        "ok": false,
+        "attendu_min": 0.0
+      }
+    ]
+  }
+}

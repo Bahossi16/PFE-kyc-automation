@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rapport d'Évaluation — KYC PFE</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e2e8f0;min-height:100vh;padding:40px 20px}
+  .container{max-width:1100px;margin:0 auto}
+  h1{font-size:2rem;font-weight:700;color:#7c3aed;margin-bottom:8px}
+  .subtitle{color:#94a3b8;font-size:0.95rem;margin-bottom:40px}
+  .section{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:28px;margin-bottom:32px}
+  .section h2{font-size:1.1rem;font-weight:600;color:#a78bfa;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:20px}
+  .metric-card{background:rgba(255,255,255,0.05);border-radius:12px;padding:20px;text-align:center;border:1px solid rgba(255,255,255,0.08)}
+  .metric-val{font-size:2.2rem;font-weight:700;margin-bottom:4px}
+  .metric-lbl{font-size:0.75rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em}
+  .good{color:#00e5a0} .warn{color:#f59e0b} .bad{color:#ef4444}
+  table{width:100%;border-collapse:collapse;font-size:0.85rem}
+  th{background:rgba(124,58,237,0.2);color:#a78bfa;padding:10px;text-align:left;font-weight:600}
+  td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,0.06)}
+  tr:hover td{background:rgba(255,255,255,0.03)}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.75rem;font-weight:600}
+  .badge-ok{background:rgba(0,229,160,0.15);color:#00e5a0}
+  .badge-warn{background:rgba(245,158,11,0.15);color:#f59e0b}
+  .badge-err{background:rgba(239,68,68,0.15);color:#ef4444}
+  .cm-table td{text-align:center;font-weight:600;min-width:80px}
+  .cm-diag{background:rgba(0,229,160,0.2);color:#00e5a0}
+  .cm-off{background:rgba(239,68,68,0.12);color:#ef4444}
+  .progress-bar{background:rgba(255,255,255,0.08);border-radius:8px;height:12px;overflow:hidden;margin-top:6px}
+  .progress-fill{height:100%;border-radius:8px;transition:width 1s ease}
+  .tag{font-size:0.7rem;background:rgba(124,58,237,0.2);color:#a78bfa;padding:2px 8px;border-radius:10px;margin-left:8px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📊 Rapport d'Évaluation Scientifique</h1>
+  <div class="subtitle">Projet KYC Bancaire Tunisien — PFE Master | Généré le 2026-07-26 01:35:39</div>
+
+  <!-- OCR -->
+  <div class="section">
+    <h2>🤖 1. Évaluation OCR — PaddleOCR (Deep Learning) <span class="tag">PP-OCRv5 + CRNN + CNN</span></h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val good">0.7%</div>
+        <div class="metric-lbl">CER — Character Error Rate</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:1.4000000000000001%;background:#00e5a0"></div></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">9.1%</div>
+        <div class="metric-lbl">WER — Word Error Rate</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:18.18%;background:#00e5a0"></div></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">11</div>
+        <div class="metric-lbl">Champs évalués</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">10/11</div>
+        <div class="metric-lbl">Champs corrects</div>
+      </div>
+    </div>
+    <table>
+      <tr><th>ID</th><th>Champ</th><th>Référence</th><th>Obtenu par OCR</th><th>CER</th><th>WER</th><th>Résultat</th></tr>
+      <tr><td>OCR-001</td><td>cin</td><td style='direction:rtl'>12621583</td><td style='direction:rtl'>12621583</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-001</td><td>nom</td><td style='direction:rtl'>سويبقي</td><td style='direction:rtl'>سويبقي</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-001</td><td>prenom</td><td style='direction:rtl'>دليلة</td><td style='direction:rtl'>دليلة</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-002</td><td>cin</td><td style='direction:rtl'>13511348</td><td style='direction:rtl'>13511348</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-002</td><td>nom</td><td style='direction:rtl'>بنعمار</td><td style='direction:rtl'>بنعمار</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-002</td><td>prenom</td><td style='direction:rtl'>وصال</td><td style='direction:rtl'>وصال</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-003</td><td>cin</td><td style='direction:rtl'>02240639</td><td style='direction:rtl'>02240639</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-003</td><td>nom</td><td style='direction:rtl'>مباركي</td><td style='direction:rtl'>مباركي</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-003</td><td>prenom</td><td style='direction:rtl'>عمران</td><td style='direction:rtl'>عمران</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>OCR-004</td><td>nom_employe</td><td style='direction:rtl'>MBARKI OMRANE</td><td style='direction:rtl'>MBARKIOMRANE</td><td>0.077</td><td>1.000</td><td><span class='badge badge-err'>✗ Erreur</span></td></tr><tr><td>OCR-004</td><td>salaire_net</td><td style='direction:rtl'>1499.0</td><td style='direction:rtl'>1499.0</td><td>0.000</td><td>0.000</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr>
+    </table>
+    <p style="margin-top:14px;font-size:0.8rem;color:#64748b">💡 CER &lt; 10% = excellent (standard IEEE). WER &lt; 15% = très bon pour des documents arabes scannés.</p>
+  </div>
+
+  <!-- Classification -->
+  <div class="section">
+    <h2>📁 2. Évaluation Classification de Documents <span class="tag">IA Symbolique + Vote pondéré</span></h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">Accuracy</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">Precision</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">Recall</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">F1-Score</div>
+      </div>
+    </div>
+    <table>
+      <tr><th>ID</th><th>Type Attendu</th><th>Type Prédit</th><th>Résultat</th></tr>
+      <tr><td>CLS-001</td><td>CIN</td><td>CIN</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>CLS-002</td><td>CIN</td><td>CIN</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>CLS-003</td><td>CIN</td><td>CIN</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>CLS-004</td><td>FICHE_DE_PAIE</td><td>FICHE_DE_PAIE</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr><tr><td>CLS-005</td><td>FACTURE_STEG</td><td>FACTURE_STEG</td><td><span class='badge badge-ok'>✓ Correct</span></td></tr>
+    </table>
+  </div>
+
+  <!-- Matching -->
+  <div class="section">
+    <h2>🔍 3. Évaluation Matching Identité — Jaro-Winkler <span class="tag">ML Classique — Seuil 75.0%</span></h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">Precision</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">Recall</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">100.0%</div>
+        <div class="metric-lbl">F1-Score</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">1.0</div>
+        <div class="metric-lbl">ROC-AUC</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">6</div>
+        <div class="metric-lbl">Vrais Positifs (TP)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">0</div>
+        <div class="metric-lbl">Faux Positifs (FP)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">0</div>
+        <div class="metric-lbl">Faux Négatifs (FN)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">2</div>
+        <div class="metric-lbl">Vrais Négatifs (TN)</div>
+      </div>
+    </div>
+    <table>
+      <tr><th>ID</th><th>Description</th><th>Score JW</th><th>Label Réel</th><th>Prédit</th><th>Résultat</th></tr>
+      <tr><td>MATCH-001</td><td style='font-size:0.8rem'>CIN valide — client existant dans CBS</td><td>100.0%</td><td>✅ Client valide</td><td>POSITIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-002</td><td style='font-size:0.8rem'>CIN valide — client existant dans CBS</td><td>100.0%</td><td>✅ Client valide</td><td>POSITIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-003</td><td style='font-size:0.8rem'>CIN valide — client existant dans CBS avec fiche de paie (anomalie salaire)</td><td>100.0%</td><td>✅ Client valide</td><td>POSITIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-004</td><td style='font-size:0.8rem'>CIN inexistante dans CBS — client introuvable</td><td>0.0%</td><td>❌ Non client</td><td>NÉGATIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-005</td><td style='font-size:0.8rem'>CIN valide mais nom complètement différent — fraude potentielle</td><td>43.33%</td><td>❌ Non client</td><td>NÉGATIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-006</td><td style='font-size:0.8rem'>Nom légèrement different (variante orthographique) — divergence mineure</td><td>96.67%</td><td>✅ Client valide</td><td>POSITIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-007</td><td style='font-size:0.8rem'>CIN valide latin — correspondance nom latin</td><td>100.0%</td><td>✅ Client valide</td><td>POSITIF</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td>MATCH-008</td><td style='font-size:0.8rem'>Nom collé (OCR scan) — Jaro-Winkler doit récupérer</td><td>98.46%</td><td>✅ Client valide</td><td>POSITIF</td><td><span class='badge badge-ok'>✓</span></td></tr>
+    </table>
+  </div>
+
+  <!-- Benchmark JW -->
+  <div class="section">
+    <h2>📏 4. Benchmark Jaro-Winkler — Robustesse sur Paires Connues</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val #00e5a0">86%</div>
+        <div class="metric-lbl">Accuracy Benchmark</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val good">6/7</div>
+        <div class="metric-lbl">Paires Réussies</div>
+      </div>
+    </div>
+    <table>
+      <tr><th>Paire</th><th>S1</th><th>S2</th><th>Score</th><th>Seuil Min</th><th>Résultat</th></tr>
+      <tr><td style='font-size:0.8rem'>identique arabe</td><td style='direction:rtl'>سويبقي دليلة</td><td style='direction:rtl'>سويبقي دليلة</td><td><b>100.0%</b></td><td>99.0%</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td style='font-size:0.8rem'>identique latin</td><td style='direction:rtl'>SOUIBGUI DALILA</td><td style='direction:rtl'>SOUIBGUI DALILA</td><td><b>100.0%</b></td><td>99.0%</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td style='font-size:0.8rem'>nom collé scan</td><td style='direction:rtl'>MBARKI OMRANE</td><td style='direction:rtl'>MBARKIOMRANE</td><td><b>98.46%</b></td><td>90.0%</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td style='font-size:0.8rem'>espace manquant</td><td style='direction:rtl'>BEN AMOR</td><td style='direction:rtl'>BENAMOR</td><td><b>97.08%</b></td><td>90.0%</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td style='font-size:0.8rem'>variante orthographique</td><td style='direction:rtl'>GHARBI</td><td style='direction:rtl'>GHERBI</td><td><b>91.11%</b></td><td>80.0%</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td style='font-size:0.8rem'>double lettre manquante</td><td style='direction:rtl'>MASSAOUD</td><td style='direction:rtl'>MASOUD</td><td><b>94.17%</b></td><td>80.0%</td><td><span class='badge badge-ok'>✓</span></td></tr><tr><td style='font-size:0.8rem'>noms complètement différents</td><td style='direction:rtl'>TRABELSI</td><td style='direction:rtl'>BEN ALI</td><td><b>67.98%</b></td><td>0.0%</td><td><span class='badge badge-err'>✗</span></td></tr>
+    </table>
+  </div>
+
+  <div style="text-align:center;color:#475569;font-size:0.8rem;padding:20px 0">
+    Rapport généré automatiquement par le module d'évaluation — Projet KYC Bancaire Tunisien PFE Master
+  </div>
+</div>
+</body>
+</html>
