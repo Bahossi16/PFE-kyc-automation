@@ -12,6 +12,8 @@ try:
 except AttributeError:
     pass
 
+# Instance globale PaddleOCR (singleton)
+_ocr_instance = None
 
 # =======================================================================
 # MODULE 0 : CONVERSION PDF -> IMAGE (si nécessaire)
@@ -50,7 +52,10 @@ def extraire_elements_ocr(image_path):
     """
     try:
         from paddleocr import PaddleOCR
-        ocr = PaddleOCR(use_textline_orientation=True, lang='ar', enable_mkldnn=False)
+        global _ocr_instance
+        if _ocr_instance is None:
+            _ocr_instance = PaddleOCR(use_textline_orientation=True, lang='ar', enable_mkldnn=False)
+        ocr = _ocr_instance
         result = ocr.ocr(image_path)
 
         elements = []
@@ -63,8 +68,8 @@ def extraire_elements_ocr(image_path):
                 for i, (box, text) in enumerate(zip(polys, texts)):
                     score = scores[i] if i < len(scores) else 1.0
                     if score > 0.35 and text.strip():
-                        x_min = min(point[0] for point in box)
-                        y_min = min(point[1] for point in box)
+                        x_min = float(min(point[0] for point in box))
+                        y_min = float(min(point[1] for point in box))
                         elements.append({'text': text.strip(), 'x': x_min, 'y': y_min})
             elif isinstance(result[0], list):
                 # PaddleOCR classique
@@ -74,8 +79,8 @@ def extraire_elements_ocr(image_path):
                         text = line[1][0]
                         score = line[1][1]
                         if score > 0.35 and text.strip():
-                            x_min = min(point[0] for point in box)
-                            y_min = min(point[1] for point in box)
+                            x_min = float(min(point[0] for point in box))
+                            y_min = float(min(point[1] for point in box))
                             elements.append({'text': text.strip(), 'x': x_min, 'y': y_min})
                     except Exception:
                         pass
@@ -87,6 +92,10 @@ def extraire_elements_ocr(image_path):
     except Exception as e:
         print(f"[ERREUR OCR] {e}")
         return []
+    finally:
+        # Force la libération de la mémoire (Memory Leak PaddlePaddle)
+        import gc
+        gc.collect()
 
 
 def extraire_texte_ocr(image_path):
@@ -105,7 +114,7 @@ def extraire_texte_ocr(image_path):
 MOTS_CLES_DOCUMENT = {
     "CIN": [
         "carte d'identite", "republique tunisienne", "identite nationale",
-        "cin", "جمهورية تونسية", "بطاقة تعريف"
+        "cin", "جمهورية تونسية", "بطاقة تعريف", "الجمهورية التونسية", "بطاقة التعريف"
     ],
     "PASSEPORT": [
         "passeport", "passport", "republique tunisienne", "tunisian republic",
@@ -127,7 +136,9 @@ MOTS_CLES_DOCUMENT = {
     "FICHE_DE_PAIE": [
         "bulletin de paie", "fiche de paie", "salaire net", "brut",
         "cotisation", "cnss", "irpp", "employeur", "employe",
-        "net a payer", "periode de paie"
+        "net a payer", "net à payer", "periode de paie",
+        "traitement net", "net mensuel", "net verse", "salaire de base",
+        "bulletin de salaire", "bulletin mensuel", "retenues", "gains"
     ],
     "CONTRAT_BAIL": [
         "contrat de bail", "contrat de location", "loyer", "locataire",
@@ -180,6 +191,9 @@ def extraire_donnees_cin(lignes):
 
     for i, ligne in enumerate(lignes):
         ligne_stripped = ligne.strip()
+        # Supprimer les diacritiques arabes (Tashkeel) pour une comparaison robuste
+        ligne_stripped = re.sub(r'[\u064B-\u065F]', '', ligne_stripped)
+        
         if 'اللقب' in ligne_stripped and not resultats["nom"]:
             texte_sans_label = ligne_stripped.replace('اللقب', '').strip()
             if texte_sans_label:
@@ -290,6 +304,7 @@ def extraire_donnees_facture_steg(lignes, elements_geo=None):
     """
     texte = " ".join(lignes)
     resultats = {"type": "FACTURE_STEG", "nom_abonne": None,
+                 "nom": None, "prenom": None,
                  "adresse": None, "reference_client": None,
                  "montant_total": None, "date_echeance": None}
 
@@ -308,6 +323,39 @@ def extraire_donnees_facture_steg(lignes, elements_geo=None):
     if match_date:
         resultats["date_echeance"] = match_date.group(1)
 
+    def _finaliser_steg(res):
+        nom_complet = res.pop("nom_abonne", None)
+        if nom_complet:
+            nom_upper = nom_complet.upper().strip()
+            # Cas spécial : Résidence ou Société → pas de Nom/Prénom séparables
+            if nom_upper.startswith("RES ") or nom_upper.startswith("STE "):
+                res["nom"] = nom_complet.strip()
+                res["prenom"] = ""
+                return res
+            # Supprimer les civilités courantes
+            for prefix in ["MR B ", "MME B ", "MR ", "MME ", "M "]:
+                if nom_upper.startswith(prefix):
+                    nom_complet = nom_complet[len(prefix):].strip()
+                    nom_upper = nom_complet.upper().strip()
+                    break
+            parts = nom_complet.split()
+            if len(parts) >= 2:
+                # Cas noms composés tunisiens : B / BEN / EL / AL en tête
+                if parts[0].upper() in ["BEN", "B", "EL", "AL", "ABOU", "HAJ", "ELHAJ"] and len(parts) >= 3:
+                    res["nom"] = parts[0] + " " + parts[1]
+                    res["prenom"] = " ".join(parts[2:])
+                # Cas particule courte (DE, DU, JE, etc. <= 2 chars) : regrouper avec le mot suivant
+                elif len(parts[0]) <= 2 and len(parts) >= 3:
+                    res["nom"] = parts[0] + " " + parts[1]
+                    res["prenom"] = " ".join(parts[2:])
+                else:
+                    res["nom"] = parts[0]
+                    res["prenom"] = " ".join(parts[1:])
+            else:
+                res["nom"] = nom_complet
+                res["prenom"] = ""
+        return res
+
     # ----------------------------------------------------------------
     # EXTRACTION NOM + ADRESSE : Parser Géométrique (prioritaire)
     # ----------------------------------------------------------------
@@ -317,40 +365,113 @@ def extraire_donnees_facture_steg(lignes, elements_geo=None):
         nom_client = None
         adresse_client = None
 
-        for el in elements_geo[:50]:
+        for el in elements_geo[:80]:
             t = el['text'].strip().upper()
-            if t.startswith("MR ") or t.startswith("MME ") or t.startswith("STE ") or t.startswith("M ") or t.startswith("RES "):
+            # Chercher la ligne qui commence par une civilité ou RES/STE
+            # On accepte aussi t == "RES" (sans espace) car l'OCR peut couper le bloc
+            is_anchor = (
+                t.startswith("MR ") or t.startswith("MME ") or t.startswith("STE ")
+                or t.startswith("M ") or t.startswith("RES ")
+                or t in ("RES", "MR", "MME", "STE")
+            )
+            if is_anchor:
+                idx = elements_geo.index(el)
+                ligne_complete = el['text'].strip()
+                # Limiter la concaténation à la MOITIÉ GAUCHE du document
+                # pour ne pas avaler la colonne N°Dépannage (droite)
+                X_LIGNE_MAX = el['x'] + 300
+                for el2 in elements_geo[idx+1:idx+6]:
+                    # Même ligne (y proche) ET dans la partie gauche
+                    if abs(el2['y'] - el['y']) < 10 and el2['x'] < X_LIGNE_MAX:
+                        # Stopper si on rencontre N° ou texte arabe ou un mot du district dans le bloc
+                        if re.search(r'N°|رقم|تدخل|DISTRICT|TUNIS|VILLE|SFAX|SOUSSE|NABEUL', el2['text'], re.IGNORECASE):
+                            break
+                        ligne_complete += " " + el2['text'].strip()
+                    else:
+                        break
+                ligne_complete = ligne_complete.upper()
                 # Séparer Nom et Adresse si virgule présente
-                if " , " in t or ", " in t:
-                    parts = re.split(r'\s*,\s*', t, maxsplit=1)
+                if ", " in ligne_complete:
+                    parts = re.split(r'\s*,\s*', ligne_complete, maxsplit=1)
                     nom_client = parts[0].strip()
                     adresse_client = parts[1].strip() if len(parts) > 1 else ""
                 else:
-                    nom_client = t.split(",")[0].strip() if "," in t else t.strip()
+                    nom_client = ligne_complete.strip()
                     adresse_client = ""
                 anchor_y = el['y']
                 anchor_x = el['x']
                 break
 
         if anchor_y is not None:
-            blocs_adresse = [adresse_client] if adresse_client else []
-            BRUIT = {"N°Dépannage", "N°depannage", "District", "district",
-                     "Dépannage", "depannage", "FACTURE", "ESTIMEE", "RELEVE",
-                     "Imprimer", "imprimer"}
+            # ---- Stratégie 1 : L'adresse est DÉJÀ dans la ligne du nom ----
+            # Si adresse_client contient un code postal tunisien (4 chiffres),
+            # on l'utilise directement sans chercher d'autres blocs.
+            CODE_POSTAL_RE = re.compile(r'\b\d{4}\b')
+            if adresse_client and CODE_POSTAL_RE.search(adresse_client):
+                # Nettoyer : tronquer au premier N° ou texte arabe et la 1ère date
+                adresse_propre = adresse_client
+                adresse_propre = re.split(r'(?i)\s*N°|\s*رقم|\s*تدخل', adresse_propre, maxsplit=1)[0].strip()
+                adresse_propre = re.split(
+                    r'\s*(?:من|إلى|CONSOMMATION|SERVICES|من\s|\d{2}[-/]\d{2}[-/]\d{4})',
+                    adresse_propre, maxsplit=1
+                )[0].strip()
+                resultats["nom_abonne"] = nom_client
+                resultats["adresse"] = adresse_propre if adresse_propre else None
+                return _finaliser_steg(resultats)
 
+            # ---- Stratégie 2 : Chercher l'adresse dans les blocs géométriques voisins ----
+            blocs_adresse = [adresse_client] if adresse_client else []
+            BRUIT = {
+                # En-têtes STEG droit (numéro de dépannage, district, etc.)
+                "N\u00b0Dépannage", "N°depannage", "N°DEPANNAGE", "DEPANNAGE",
+                "District", "district", "DISTRICT",
+                "Dépannage", "depannage", "FACTURE", "ESTIMEE", "RELEVE",
+                "Imprimer", "imprimer", "CONSOMMATION", "SERVICES",
+                "ELECTRICITE", "Référence", "REFERENCE", "MONTANT",
+                "TOTAL", "Facture", "Abonné", "ABONNE",
+                # Noms de villes tunisiennes (peuvent apparaître dans le champ District)
+                "TUNIS", "VILLE", "SFAX", "SOUSSE", "NABEUL", "BIZERTE",
+                "ARIANA", "BEN AROUS", "MONASTIR", "MAHDIA", "GABES",
+                # Mots-clés arabes des tableaux STEG
+                "المعدل", "الكمية", "عدد", "الأشهر", "سعر", "الوحدة",
+                "المبلغ", "الإنسباب", "الاستهلاك", "الخدمات", "السبيانات",
+                "كهرباء", "البيانات", "الأقساط", "ديون", "دفوعات",
+                "من", "إلى", "المرجع", "رقم", "التدخل",
+            }
+
+            # La colonne droite du document STEG (N°Dépannage, district) commence
+            # généralement à x > anchor_x + 250 — on la coupe strictement
+            X_MAX = anchor_x + 260
             for el in elements_geo:
-                if el['y'] > anchor_y and el['y'] < anchor_y + 120:
-                    if el['x'] < anchor_x + 500:
+                if el['y'] > anchor_y and el['y'] < anchor_y + 70:
+                    if el['x'] < X_MAX:
                         est_bruit = any(b.lower() in el['text'].lower() for b in BRUIT)
-                        if not est_bruit and el['text'].strip():
+                        import unicodedata
+                        est_arabe = all(
+                            unicodedata.bidirectional(c) in ('AL', 'AN', 'NSM', 'WS', 'ON')
+                            for c in el['text'].replace(' ', '') if c.strip()
+                        )
+                        # Stopper immédiatement si on rencontre "N°" ou du texte arabe
+                        if re.search(r'N°|رقم|تدخل', el['text'], re.IGNORECASE):
+                            break
+                        if not est_bruit and not est_arabe and el['text'].strip():
                             blocs_adresse.append(el['text'].strip())
+                            if CODE_POSTAL_RE.search(el['text']):
+                                break
 
             adresse_finale = " ".join(blocs_adresse).strip()
             adresse_finale = re.sub(r'\s+', ' ', adresse_finale)
+            # Tronquer au premier N° ou texte arabe parasite
+            adresse_finale = re.split(r'\s*N°|\s*رقم|\s*تدخل', adresse_finale, maxsplit=1)[0].strip()
+            # Tronquer si du bruit traîne quand même après le code postal
+            match_troncature = re.search(r'(\d{4}\s+[A-Z]+)', adresse_finale.upper())
+            if match_troncature:
+                adresse_finale = adresse_finale[:match_troncature.end()].strip()
 
             resultats["nom_abonne"] = nom_client
             resultats["adresse"] = adresse_finale if adresse_finale else None
-            return resultats
+            return _finaliser_steg(resultats)
+
 
     # ----------------------------------------------------------------
     # FALLBACK : Regex sur texte simple (si pas de coordonnées géo)
@@ -360,20 +481,46 @@ def extraire_donnees_facture_steg(lignes, elements_geo=None):
         "TUNISIENNE", "CONSOMMATION", "SERVICES", "COORDONNEES", "CLIENT",
         "ABONNE", "REFERENCE", "COMPTEUR", "MONTANT", "TOTAL", "DATE",
         "ECHEANCE", "PERIODE", "DISTRIBUTION", "NATIONALE", "SOCIETE",
-        "ENERGIE", "TARIF", "PUISSANCE", "SOUSCRITE"
+        "ENERGIE", "TARIF", "PUISSANCE", "SOUSCRITE", "ZERO", "MILLIMES", "TTC",
+        "TND", "PAYER", "AVANT", "COPIE", "NET", "TVA"
     }
 
-    match_nom = re.search(
-        r'(?:^|\n|\s)(?:NOM\s*:?\s*|MR\.?\s+|MME\.?\s+|M\.\s+)([A-Z][A-Z\s]{2,40}?)(?=\s*(?:,|\d|N°|RUE|AV|BD|IMP|CITE|LOT|$|\n))',
-        texte, re.IGNORECASE | re.MULTILINE
-    )
-    if match_nom:
-        resultats["nom_abonne"] = match_nom.group(1).strip()
-    else:
-        noms = re.findall(r'\b([A-Z]{2,}(?:\s[A-Z]{2,})+)\b', texte)
-        candidats = [n for n in noms if not any(token in MOTS_IGNORES_STEG for token in n.split())]
-        if candidats:
-            resultats["nom_abonne"] = candidats[0]
+    # Regex : cherche une ligne qui commence par MR / MME / RES / STE
+    # On scanne les lignes brutes pour capturer même quand le texte est concaténé
+    nom_trouve = None
+    for ligne in lignes:
+        l = ligne.strip()
+        lu = l.upper()
+        if (lu.startswith("MR ") or lu.startswith("MME ") or lu.startswith("M ")
+                or lu.startswith("RES ") or lu.startswith("STE ")):
+            # Garder uniquement la partie avant la première virgule ou chiffre
+            nom_partie = re.split(r'\s*,', l, maxsplit=1)[0].strip()
+            # Nettoyer : supprimer N° et tout ce qui suit
+            nom_partie = re.split(r'\s*N°', nom_partie, maxsplit=1, flags=re.IGNORECASE)[0].strip()
+            if nom_partie:
+                nom_trouve = nom_partie
+                break
+
+    if not nom_trouve:
+        # Fallback regex sur le texte brut concaténé
+        match_nom = re.search(
+            r'(?:^|\n)\s*((?:MR\.?\s+|MME\.?\s+|M\.\s+|RES\s+|STE\s+)[A-Z][A-Z\s\.]{1,50}?)(?=\s*,|\s*\d|\s*$)',
+            texte, re.IGNORECASE | re.MULTILINE
+        )
+        if match_nom:
+            nom_trouve = match_nom.group(1).strip()
+        else:
+            # Dernier recours : candidats tout-majuscules en ignorant le bruit STEG
+            noms = re.findall(r'\b([A-Z]{2,}(?:\s[A-Z]{2,})+)\b', texte)
+            MOTS_BRUIT = MOTS_IGNORES_STEG | {"ELECTRICITE", "ECLAIRAGE", "GAZ", "NATUR",
+                                               "BLOC", "ETAGE", "APP", "CITE", "CTE", "RDC",
+                                               "BIS", "RUE", "DEPANNAGE", "DISTRICT"}
+            candidats = [n for n in noms if not any(token in MOTS_BRUIT for token in n.split())]
+            if candidats:
+                nom_trouve = candidats[0]
+
+    if nom_trouve:
+        resultats["nom_abonne"] = nom_trouve
 
     match_adr = re.search(
         r'\b(\d+\s+(?:RUE|AV|AVE|AVENUE|BOULEVARD|BD|ROUTE|IMP|CITE|LOT|ZON|CTE|CITE)\s+[A-Z\s,\-\.]+?)(?=\d{4}|\n|$)',
@@ -382,29 +529,42 @@ def extraire_donnees_facture_steg(lignes, elements_geo=None):
     if match_adr:
         resultats["adresse"] = match_adr.group(1).strip()
 
-    return resultats
+    return _finaliser_steg(resultats)
 
 
-def extraire_donnees_fiche_paie(lignes):
+def extraire_donnees_fiche_paie(lignes, elements_geo=None, image_path=None):
     """Extrait les informations d'une Fiche de Paie tunisienne."""
     texte = " ".join(lignes)
-    resultats = {"type": "FICHE_DE_PAIE", "nom_employe": None,
+    resultats = {"type": "FICHE_DE_PAIE", "nom": None, "prenom": None,
                  "cin": None, "employeur": None,
                  "salaire_net": None, "periode": None}
 
-    # 1. Extraction CIN
-    match_cin = re.search(r'\b(\d{8})\b', texte)
+    # 1. Extraction CIN (Doit être précédé d'un mot-clé pour éviter les faux positifs type matricule)
+    match_cin = re.search(r'(?:C\.?I\.?N|CARTE D\'IDENTITE|IDENTITE|CIN\s*N°|CN)\s*[:\-]?\s*\(?\s*(\d{7,8})', texte, re.IGNORECASE)
     if match_cin:
-        resultats["cin"] = match_cin.group(1)
+        resultats["cin"] = match_cin.group(1).zfill(8)
 
     # 2. Extraction du Nom (Recherche ciblée après "NOM ET PRENOM" ou "NOM & PRENOM")
     nom_trouve = None
     MOIS = ["JANVIER", "FEVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET", "AOUT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DECEMBRE"]
     MOTS_EXCLUS_PAIE = ["STATUT", "MATRICULE", "ECH", "QUALIFICATION", "AFFECTATION",
-                        "CATEGORIE", "GRADE", "RUBRIQUE", "CODE", "DESIGNATION", "CAT"]
+                        "CATEGORIE", "GRADE", "RUBRIQUE", "CODE", "DESIGNATION", "CAT",
+                        "NOM", "PRENOM"]  # Eviter que les labels du tableau soient pris comme nom
     
     for i, ligne in enumerate(lignes):
-        if "NOM ET PRENOM" in ligne.upper() or "NOM & PRENOM" in ligne.upper():
+        ligne_up = ligne.upper()
+        # Variantes larges pour l'étiquette du nom (robuste aux espaces manquants de l'OCR)
+        est_etiquette_nom = bool(
+            re.search(r'NOM\s*(?:ET|&)\s*PRENOM', ligne_up)
+            or re.search(r'\bNOM\s*:', ligne_up)
+        )
+        # Cas spécial : "NOM : SAAD" sur la même ligne
+        if est_etiquette_nom and ":" in ligne:
+            partie = ligne.split(":", 1)[1].strip()
+            if partie and not any(char.isdigit() for char in partie):
+                nom_trouve = partie
+                break
+        if est_etiquette_nom:
             for j in range(1, 8):
                 if i + j >= len(lignes):
                     break
@@ -422,6 +582,9 @@ def extraire_donnees_fiche_paie(lignes):
                     continue
                 # Exclure les titres de poste (contiennent un tiret : "Sous-Chef")
                 if '-' in candidat:
+                    continue
+                # Exclure les lignes avec symbole & (entête "NOM & PRENOM")
+                if '&' in candidat:
                     continue
                 # Exclure les lignes trop courtes (1 lettre)
                 if len(candidat) < 2:
@@ -450,39 +613,143 @@ def extraire_donnees_fiche_paie(lignes):
                     break
             if nom_trouve:
                 break
-                
+
+    # CAS SPECIAL : "NOM :" et "PRENOM :" sur des lignes séparées
+    if not nom_trouve:
+        nom_seul, prenom_seul = None, None
+        for ligne in lignes:
+            m = re.match(r'\b(?:NOM|NOM DE FAMILLE)\b\s*:?\s*(.+)', ligne, re.IGNORECASE)
+            if m:
+                val = m.group(1).strip()
+                if val and not any(c.isdigit() for c in val):
+                    nom_seul = val
+            m2 = re.match(r'\bPRENOM\b\s*:?\s*(.+)', ligne, re.IGNORECASE)
+            if m2:
+                val2 = m2.group(1).strip()
+                if val2 and not any(c.isdigit() for c in val2):
+                    prenom_seul = val2
+        if nom_seul and prenom_seul:
+            nom_trouve = nom_seul + " " + prenom_seul
+        elif nom_seul:
+            nom_trouve = nom_seul
+
+    # CAS SPECIAL : "NOMME", "MONSIEUR", "M./MME" suivi du nom
+    if not nom_trouve:
+        m = re.search(r'\b(?:NOMME|INTITULE|MONSIEUR|MADAME|MR|MME|M\.?)\b\s*[:\-]?\s*([A-Z][A-Za-z\s]{3,})', texte, re.IGNORECASE)
+        if m:
+            nom_trouve = m.group(1).strip()
+
     if not nom_trouve:
         # Fallback générique
-        EXCLURE = {"CNSS", "IRPP", "TVA", "BRUT", "NET", "SALAIRE", "BULLETIN", "PAIE", "EMPLOYE", "EMPLOYEUR", "PAYER", "TOTAL", "MONTANT", "DESIGNATION", "TECHNIQUE", "PORTUAIRE", "ZONE", "EXPLOITATION", "DECLARANT", "RETENUES", "GAINS"}
+        EXCLURE = {
+            "CNSS", "IRPP", "TVA", "BRUT", "NET", "SALAIRE", "BULLETIN", "PAIE",
+            "EMPLOYE", "EMPLOYEUR", "PAYER", "TOTAL", "MONTANT", "DESIGNATION",
+            "TECHNIQUE", "PORTUAIRE", "ZONE", "EXPLOITATION", "DECLARANT",
+            "RETENUES", "GAINS", "URSSAF", "CSG", "FNAL", "AGS", "APEC",
+            # Entêtes de colonnes à exclure
+            "NOM", "PRENOM", "MATRICULE", "STATUT", "RUBRIQUE", "QUALIFICATION",
+            "AFFECTATION", "CODE", "DESIGNATION", "CATEGORIE", "GRADE",
+            # Mots structurels
+            "TRANSIT", "TRANSPORT", "RADES", "DECLARATION", "DOUANES",
+            "EXPLOITATION", "ENTREPRISE", "SOCIETE", "PAIE", "SIGNATURE",
+            "BULLETIN", "MENSUEL"
+        }
         noms = re.findall(r'\b([A-Z]{2,}(?:\s[A-Z]{2,})*)\b', texte)
         candidats = [n for n in noms if not any(t in EXCLURE for t in n.split()) and len(n) > 8]
         if candidats:
             nom_trouve = max(candidats, key=len)
 
     if nom_trouve:
+        # Rejeter le nom s'il contient "&" (label "NOM & PRENOM")
+        if '&' in nom_trouve:
+            nom_trouve = None
+        # Rejeter si c'est un mot-clé structurel (NOM, PRENOM, MATRICULE...)
+        STRUCTURAL_LABELS = {"NOM", "PRENOM", "MATRICULE", "DESIGNATION", "RUBRIQUE"}
+        if nom_trouve and any(nom_trouve.upper().strip() == lbl for lbl in STRUCTURAL_LABELS):
+            nom_trouve = None
+
+    if nom_trouve:
         # Nettoyer "MR" ou "MME"
         for prefix in ["MR ", "MME ", "M "]:
             if nom_trouve.upper().startswith(prefix):
                 nom_trouve = nom_trouve[len(prefix):].strip()
-        # Séparer les mots s'ils sont collés (ex: MBARKIOMRANE) mais c'est difficile sans dico.
-        # Au moins on l'enregistre tel quel.
-        resultats["nom_employe"] = nom_trouve
+        
+        # Nettoyer des mots parasites éventuels
+        for parasite in ["SERVICES", "FONCTION", "AGENCE", "S.F", "CELEBATAIRE", "CELIBATAIRE", "MATRICULE", "ADRESSE"]:
+            if parasite in nom_trouve.upper():
+                # Trouver l'index original en ignorant la casse
+                idx = nom_trouve.upper().find(parasite)
+                nom_trouve = nom_trouve[:idx].strip()
+        
+        # Séparer le CamelCase (ex: MohamedAli -> Mohamed Ali)
+        nom_trouve = re.sub(r'([a-z])([A-Z])', r'\1 \2', nom_trouve)
+        
+        # Séparer le Nom et le Prénom
+        parts = nom_trouve.split()
+        if len(parts) >= 2:
+            # Si le premier mot est en majuscule et le 2e ne l'est pas (ex: SAAD Mohamed Ali)
+            if parts[0].isupper() and not parts[1].isupper():
+                resultats["nom"] = parts[0]
+                resultats["prenom"] = " ".join(parts[1:])
+            # Si le dernier mot est en majuscule (ex: Mohamed Ali SAAD)
+            elif parts[-1].isupper() and not parts[-2].isupper():
+                resultats["nom"] = parts[-1]
+                resultats["prenom"] = " ".join(parts[:-1])
+            else:
+                # Fallback: le premier mot est le nom
+                resultats["nom"] = parts[0]
+                resultats["prenom"] = " ".join(parts[1:])
+        else:
+            resultats["nom"] = nom_trouve
+            resultats["prenom"] = ""
 
-    # 3. Extraction du Net à payer
-    # Format classique : "NET A PAYER 1499.000"
-    match_salaire_ligne = re.search(
-        r'(?:net\s*[\w]*\s*[\u00e0a]?\s*payer|salaire\s*net)\s*[:\-]?\s*([\d][\d.,\u00a0]*[\d]|\d)',
+    # =======================================================
+    # 3. Extraction du Salaire Net
+    # =======================================================
+    raw = None
+
+    # --- Stratégie 1 : Format direct "NET A PAYER", "SALAIRE NET", "TRAITEMENT NET", "NET VERSE" ---
+    match_net_direct = re.search(
+        r'(?:net\s*[\w]*\s*[\u00e0a]?\s*payer'
+        r'|salaire\s*net(?:\s+imposable)?'
+        r'|traitement\s*net'
+        r'|net\s*vers[e\u00e9]'
+        r'|net\s*mensuel'
+        r'|net\s+[\u00e0a]\s+payer)'
+        r'\s*[:\-]?\s*([1-9][\d\s.,\u00a0]*[\d])',
         texte, re.IGNORECASE
     )
-    if match_salaire_ligne:
-        raw = match_salaire_ligne.group(1)
-    else:
-        # Format Tabulaire Sage Paie : Le NET est souvent le dernier grand nombre avec 3 décimales de la page
-        nombres = re.findall(r'\b(\d{3,}[\.\,]\d{3})\b', texte)
-        if nombres:
-            raw = nombres[-1] # On prend le dernier
-        else:
-            raw = None
+    if match_net_direct:
+        raw = re.sub(r'[^\d.,]', '', match_net_direct.group(1).split()[0])
+
+    # --- Stratégie 2 : Chercher nombre directement après "SAL NET" ou "NET" dans le texte ---
+    if not raw:
+        # Cherche un montant collé au label NET (même ligne dans le flux OCR)
+        match_net_inline = re.search(
+            r'(?:SAL\.?\s*NET|NET\s*VERSE|NET\s*MENSUEL)\s+(\d{1,4}[.,]\d{2,3})',
+            texte, re.IGNORECASE
+        )
+        if match_net_inline:
+            raw = re.sub(r'[^\d.,]', '', match_net_inline.group(1))
+
+    # --- Stratégie 3 : Format tableau tunisien (SAL NET = dernière colonne) ---
+    # Cherche le nombre qui vient APRÈS la séquence AVANCES/IND.NON IMPOS dans la ligne de synthèse
+    if not raw and re.search(r'(?:SAL[\s\.]*NET|\bNET\b)', texte, re.IGNORECASE):
+        # Trouver le bloc "AVANCES" ou "IND.NON" et prendre le premier grand nombre après
+        match_apres_avances = re.search(
+            r'(?:AVANCES|IND\.?\s*NON\s*IMPOS|IND\s*NON)\s+([\d.,\s]+?)\s+(\d{1,4}[.,]\d{2,3})',
+            texte, re.IGNORECASE
+        )
+        if match_apres_avances:
+            raw = re.sub(r'[^\d.,]', '', match_apres_avances.group(2))
+
+    # --- Stratégie 4 : Fallback — prendre le dernier grand montant (> 500) hors taxes ---
+    # Le NET est normalement plus grand que l'IRPP ou la CNSS individuelle
+    if not raw:
+        nombres = re.findall(r'\b(\d{1,4}[.,]\d{2,3})\b', texte)
+        nombres_filtres = [n for n in nombres if float(n.replace(',', '.')) > 500]
+        if nombres_filtres:
+            raw = nombres_filtres[-1]
 
     if raw:
         raw = raw.strip().replace('\u00a0', '').replace(' ', '').replace(',', '.')

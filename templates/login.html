@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIB AutoKYC - Connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --uib-red: #D50000; --uib-black: #1a1a1a; --uib-white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--uib-black);
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(213,0,0,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(213,0,0,0.07) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 40px 40px; } }
+        .login-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px; padding: 50px 45px; width: 420px;
+            position: relative; z-index: 1;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(213,0,0,0.1);
+        }
+        .login-header { text-align: center; margin-bottom: 35px; }
+        .login-header img { height: 55px; border-radius: 8px; margin-bottom: 20px; }
+        .login-header h1 { color: var(--uib-white); font-size: 22px; font-weight: 700; }
+        .login-header p { color: rgba(255,255,255,0.45); font-size: 13px; margin-top: 6px; }
+        .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(213,0,0,0.5), transparent); margin-bottom: 30px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .input-wrapper { position: relative; }
+        .input-wrapper i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.3); font-size: 14px; }
+        .form-group input {
+            width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px; padding: 13px 14px 13px 42px; color: var(--uib-white);
+            font-family: 'Outfit', sans-serif; font-size: 14px; transition: all 0.3s ease; outline: none;
+        }
+        .form-group input:focus { border-color: var(--uib-red); background: rgba(213,0,0,0.08); box-shadow: 0 0 0 3px rgba(213,0,0,0.15); }
+        .form-group input::placeholder { color: rgba(255,255,255,0.2); }
+        .error-msg { background: rgba(213,0,0,0.15); border: 1px solid rgba(213,0,0,0.4); border-radius: 8px; padding: 10px 14px; color: #ff6b6b; font-size: 13px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+        .btn-login { width: 100%; background: var(--uib-red); color: white; border: none; border-radius: 10px; padding: 14px; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
+        .btn-login:hover { background: #b71c1c; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(213,0,0,0.4); }
+        .login-footer { text-align: center; margin-top: 25px; color: rgba(255,255,255,0.2); font-size: 11px; }
+        .badge-secure { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 4px 10px; font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 8px; }
+        .role-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+        .role-superviseur { background: rgba(213,0,0,0.2); color: #ff6b6b; border: 1px solid rgba(213,0,0,0.4); }
+        .role-agent { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <img src="{{ url_for('static', filename='uib_logo.jpg') }}" alt="UIB Logo">
+            <h1>UIB AutoKYC <span style="font-weight: 300; color: rgba(255,255,255,0.5);">Vision AI</span></h1>
+            <p>Systeme de Controle KYC - Acces Restreint</p>
+        </div>
+
+        <div class="divider"></div>
+
+        {% if error %}
+        <div class="error-msg">
+            <i class="fa-solid fa-circle-exclamation"></i> {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label>Identifiant Agent</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="ex: b.hassan" required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-login">
+                <i class="fa-solid fa-right-to-bracket"></i> &nbsp;Se connecter
+            </button>
+        </form>
+
+        <div class="login-footer">
+            <div>UIB &copy; 2025 - Data Project Office</div>
+            <div class="badge-secure">
+                <i class="fa-solid fa-shield-halved"></i> Connexion chiffree - On-Premise
+            </div>
+        </div>
+    </div>
+</body>
+</html>

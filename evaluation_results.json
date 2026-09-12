@@ -1,0 +1,34 @@
+{
+  "CIN": {
+    "total": 30,
+    "conforme": 0,
+    "suspect": 0,
+    "anomalie": 0,
+    "automation_pct": 0.0,
+    "avg_score": 0.0
+  },
+  "Payslip T1": {
+    "total": 30,
+    "conforme": 0,
+    "suspect": 0,
+    "anomalie": 0,
+    "automation_pct": 0.0,
+    "avg_score": 0.0
+  },
+  "Payslip T2": {
+    "total": 30,
+    "conforme": 0,
+    "suspect": 0,
+    "anomalie": 0,
+    "automation_pct": 0.0,
+    "avg_score": 0.0
+  },
+  "STEG": {
+    "total": 30,
+    "conforme": 0,
+    "suspect": 0,
+    "anomalie": 0,
+    "automation_pct": 0.0,
+    "avg_score": 0.0
+  }
+}

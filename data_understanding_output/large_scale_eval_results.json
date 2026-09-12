@@ -1,0 +1,39 @@
+{
+  "summary": {
+    "CIN (Arabic)": {
+      "Validated": 0,
+      "Suspect": 0,
+      "Anomaly": 23,
+      "Error": 7,
+      "total": 30
+    },
+    "Payslip (T1)": {
+      "Validated": 0,
+      "Suspect": 0,
+      "Anomaly": 0,
+      "Error": 30,
+      "total": 30
+    },
+    "Payslip (T2)": {
+      "Validated": 0,
+      "Suspect": 0,
+      "Anomaly": 0,
+      "Error": 30,
+      "total": 30
+    },
+    "STEG Bill": {
+      "Validated": 0,
+      "Suspect": 0,
+      "Anomaly": 0,
+      "Error": 30,
+      "total": 30
+    }
+  },
+  "grand_total": {
+    "Validated": 0,
+    "Suspect": 0,
+    "Anomaly": 23,
+    "Error": 97,
+    "total": 120
+  }
+}
