@@ -1,0 +1,37 @@
+﻿# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# Database & Uploads
+*.db
+*.sqlite
+uploads/
+uploads_converted/
+images_temp/
+images_test/
+scratch/
+
+# Large Datasets (Do NOT commit mass synthetic images)
+dataset_synthetique_masse/
+*.pdf
+*.zip
+*.tar.gz
+
+# IDE & OS Files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1094 @@
+20082083CITE EL GHEZALA                                             
+31093173ERRAGOUBA EL HAMRA                                          
+20082036LA SOUKRA                                                   
+20082081BORJ TOUIL                                                  
+20082035TUNIS CARTHAGE                                              
+20082056RAOUED                                                      
+20082073BORJ LOUZIR                                                 
+20012080ARIANA                                                      
+20012037EL MENZAH 8                                                 
+20012058RIADH EL ANDALOUS                                           
+20012091EL MENZAH VI                                                
+20042061PONT DE BIZERTE                                             
+20042022KALAA ANDLEUS                                               
+90099042DJEBBA                                                      
+90099022THIBAR                                                      
+90019031EL MZARA                                                    
+90019000BEJA                                                        
+90029023EL MAAGOULA                                                 
+90029052HAMMAM SAYALA                                               
+90029029SIDI FREJ                                                   
+90029021SIDI SMAIL                                                  
+90039030ZAHRET MEDIEN                                               
+90039084EL AYAYADA                                                  
+90049075EL HERI                                                     
+90049013OUED ZARGUA                                                 
+90049070MEJEZ EL BAB                                                
+90049015EL KSAR                                                     
+90049071GRIAAT                                                      
+90049024TOUKABER                                                    
+90049034SIDI MEDIEN                                                 
+90049044SIDI NACEUR                                                 
+90059040TEBOURSOUK                                                  
+90059032DOUGGA                                                      
+90059046FEDDEN ESSOUK                                               
+90069061ESSKHIRA                                                    
+90069060TESTOUR                                                     
+90069062AIN TOUNGA                                                  
+90069014ESSLOUGUIA                                                  
+90079012OUECHTATA                                                   
+90079010NEFZA                                                       
+90079011TABABA                                                      
+90089083GRAME                                                       
+90089080GOUBELLAT                                                   
+23092097BOUM HEL                                                    
+23101164HAMMAM ECHAT                                                
+23102084BORJ CEDRIA                                                 
+23102055BIR EL BEY                                                  
+23051145MOHAMMEDIA                                                  
+23112063NOUVELLE MEDINA                                             
+23112096EL YESMINETTE                                               
+23012059BIR EL KASSAA                                               
+23012043BEN AROUS SUD                                               
+23012013BEN AROUS                                                   
+23022040RADES                                                       
+23022098RADES MEDINA                                                
+23021125RADES SALINE                                                
+23032050HAMMAMLIF                                                   
+23032093BOUKORNINE                                                  
+23032099CITE BOUSSOFFARA                                            
+23042064JBEL RASSAS                                                 
+23042054KHELIDIA                                                    
+23042090MORNAG                                                      
+23042044ERRICALA                                                    
+23062034EZZAHRA                                                     
+23062065EZZAHRA EL HABIB                                            
+23072033MEGRINE                                                     
+23072024MEGRINE CHAKER                                              
+23072014MEGRINE RIADH                                               
+23082074EL MOUROUJ                                                  
+23122082FOUCHANA                                                    
+23121135NASSEN                                                      
+70147033GHAR EL MELEH                                               
+70147024ZOUAOUINE                                                   
+70147014EL AOUSJA                                                   
+70127021JARZOUNA                                                    
+70047020JOUMINE                                                     
+70047012BEZINA                                                      
+70097026EL AZIB                                                     
+70097035MENZEL ABDERRAHMANE                                         
+70097080MENZEL JEMIL                                                
+70067075BENI ATTA                                                   
+70067070RAS JEBEL                                                   
+70067045RAF RAF PLAGE                                               
+70067034METLINE                                                     
+70067025SOUNINE                                                     
+70067015RAFRAF                                                      
+70067098EL GARIA RAS JEBEL                                          
+70077097EL GUETMA                                                   
+70077010SEJENANE                                                    
+70077031TAMERA                                                      
+70017094BORJ CHALLOUF                                               
+70017071BIZERTE HACHED                                              
+70017036TESKRAYA                                                    
+70017011PECHERIE                                                    
+70017041EL LOUATA                                                   
+70027061BIZERTE BAB MATEUR                                          
+70027053BIZERTE BOUGUATFA                                           
+70027000BIZERTE                                                     
+70037022MATEUR HACHED                                               
+70037030MATEUR                                                      
+70057042JOUAOUDA                                                    
+70057050MENZEL BOURGUIBA                                            
+70057072MZLBOURGUIBAENNAJAH                                         
+70087063UTIQUE NOUVELLE                                             
+70087013AIN GHELAL                                                  
+70087043BACH HAMBA                                                  
+70087060UTIQUE                                                      
+70087023SIDI OTHMANE                                                
+70107040GHEZALA                                                     
+70117016EL ALIA                                                     
+70117093SIDI ALI CHEBAB                                             
+70117081EL KHETMINE                                                 
+70137032TINJA                                                       
+60096021GHANNOUCHE                                                  
+60036052OUDREF                                                      
+60036010METHOUIA                                                    
+60036089METHOUIA EL MAYA                                            
+60036042EL AKARIT                                                   
+60016099GABES EL HIDAYA                                             
+60016072ZRIG                                                        
+60016014M TORRECH                                                   
+60016011GABES EL MANARA                                             
+60016071GABES PORT                                                  
+60016012SIDI BOULBABA                                               
+60016001GABES HACHED                                                
+60016040GABES REPUBLIQUE                                            
+60016000GABES                                                       
+60016061CHAT ESSALAM                                                
+60016032TEBOULBOU                                                   
+60016033CITE EL AMEL                                                
+60026022EL MDOU                                                     
+60026041CHENINI DE GABES                                            
+60026051NAHAL                                                       
+60026031BOUCHEMA                                                    
+60046036KETTANA                                                     
+60046023EL ALAYA                                                    
+60046026ZARATH                                                      
+60046045TOUJANE                                                     
+60046056EZZERKINE                                                   
+60046035AIN TOUNINE                                                 
+60046055DEKHILET TOUJANE                                            
+60046016ARRAM                                                       
+60046015AYOUN EZZERKINE                                             
+60046081BETAHRA                                                     
+60046046SIDI TOUATI                                                 
+60046080MARETH                                                      
+60056034TECHINE                                                     
+60056054TAMEZRET                                                    
+60056070MATMATA                                                     
+60066027BOUATTOUCHE                                                 
+60066060ELHAMMA SUD                                                 
+60066013SOMBAT                                                      
+60066092BECHIMA                                                     
+60066062BEN GHILOUF                                                 
+60066020EL HAMMA                                                    
+60066095CHENCHOU                                                    
+60076030MENZEL EL HABIB                                             
+60086024NOUVELLE ZRAOUA                                             
+60086025BENI ZELTEN                                                 
+60086044NOUVELLE MATMATA                                            
+60086043LAFFAM                                                      
+21032183LORTES                                                      
+21032181NICHIOU                                                     
+21032180EL GUETTAR                                                  
+21032145OULED BOUSSAD                                               
+21032125BOUOMRANE                                                   
+21082173BORJ EL MDHLIA                                              
+21082170JEBEL MDILLA                                                
+21072161MOULARES GARE                                               
+21072110MOULARES                                                    
+21072114SIDI BOUBAKER                                               
+21042190SENED                                                       
+21042192MAJOURA                                                     
+21042193ABDESSADOK                                                  
+21042195ALIM                                                        
+21042116ZANNOUCHE                                                   
+21012123GAFSA CITE ENNOUR                                           
+21012100GAFSA                                                       
+21012112SIDI AHMED ZARROUG                                          
+21012133GAFSA CITEDESJEUNES                                         
+21012142KEF DERBI                                                   
+21012143DOUALY GAFSA                                                
+21022196ECHABIBA                                                    
+21022141MENZEL MIMOUN                                               
+21052134METLAOUI THALJA                                             
+21052132METLAOUI MINE                                               
+21052130METLAOUI                                                    
+21052113METLAOUI GARE                                               
+21062120REDEYEF                                                     
+21062122ZOMRA REDEYEF                                               
+21062140REDEYEF GARE                                                
+21092115BELKHIR                                                     
+21092139EL AYAICHA                                                  
+21092135HAOUEL EL OUED                                              
+21102111GAFSA GARE                                                  
+21102121LALA                                                        
+21102151GAFSA AEROPORT                                              
+21102169ERRAGOUBA                                                   
+21112131SIDI AICH                                                   
+81088194HAKIM                                                       
+81088193SIDI MESKINE                                                
+81088185EDKHAIELIA                                                  
+81088115OUED MELIZ                                                  
+81018196CITE ETTATAOUR                                              
+81018195ESSAADA                                                     
+81018100JENDOUBA                                                    
+81018153EL MELGUA                                                   
+81018122ESSANABEL                                                   
+81018131SOUK ESSEBT                                                 
+81028173SOUMRANE                                                    
+81028126BALTA                                                       
+81028170BOU SALEM                                                   
+81028143BADROUNA                                                    
+81028124EL MARJA                                                    
+81028116BOUAOUEN                                                    
+81038161OUERGUECH                                                   
+81038162OUED EL MAADEN                                              
+81038160GHARDIMAOU                                                  
+81048134TEBAINIA                                                    
+81048135OULED HELLAL                                                
+81048136HAMMAM BOURGUIBA                                            
+81048121BABOUCH                                                     
+81048130AIN DRAHAM                                                  
+81058127BRIREM                                                      
+81058128JABALLAH                                                    
+81058110TABARKA                                                     
+81058192EL HAMDIA                                                   
+81058112AIN ESSOBH                                                  
+81068141JANTOURA                                                    
+81068114BENMETIR                                                    
+81068145HEDHIL                                                      
+81068142AIN EL BEYA                                                 
+81068140FERNANA                                                     
+81078189JENDOUBA NORD                                               
+81078111BEN BECHIR                                                  
+81078132SOUK JEMAA                                                  
+81078117BELLARIJIA                                                  
+31103181BIR DAOULA                                                  
+31103126JEHINA                                                      
+31103152BIR AHMED                                                   
+31103180BOUHAJLA                                                    
+31033133EL KARMA                                                    
+31033161EL AOUAMRIA                                                 
+31033112BENSALEM                                                    
+31033183ABIDA CHARGUIA                                              
+31033121CHEBIKA                                                     
+31113145OULED FARJALLAH                                             
+31113116CHERARDA                                                    
+31073150EL ALA                                                      
+31073153EL MESSAID                                                  
+31073154MESSIOUTA                                                   
+31093171EL KABARA                                                   
+31093114MENZEL MHIRI                                                
+31093170NASRALLAH                                                   
+31093115SIDI SAAD                                                   
+31053124KSAR LAMSA                                                  
+31053113AIN JELOULA                                                 
+31053120OUSSELTIA                                                   
+31013142EL BATEN                                                    
+31013140KAIROUAN OKBA                                               
+31013182CITE ENNASR                                                 
+31013129CITE EL HAJJEM                                              
+31013111EL MOUTBASTA                                                
+31013193EL GHABATE                                                  
+31023100KAIROUAN                                                    
+31023143EL KHAZZAZIA                                                
+31023198EL BORJI                                                    
+31023131KAIROUAN SUD                                                
+31023199CITE IBN EL JAZZAR                                          
+31023191RACCADA                                                     
+31023192EL KHADHRA                                                  
+31023151ZAAFRANA                                                    
+31043110SBIKHA                                                      
+31043125EL ALAM                                                     
+31043196HENDI ZITOUNA                                               
+31043195SIDI MESSAOUD                                               
+31043194DHRIAAT                                                     
+31043132SISSEB                                                      
+31043135AIN BOUMOURRA                                               
+31063130HAFFOUZ                                                     
+31063134KHIT EL OUED                                                
+31083160HAJEB EL AYOUN                                              
+12101225ELAJREDT                                                    
+12101221HAIDRA                                                      
+12101285AIN EDDEFLA                                                 
+12121245EL KAMOUR                                                   
+12121247KHANGUET ZAZIA                                              
+12121241HASSI EL FARID                                              
+12111281AIN EL HMADNA                                               
+12111280JEDLIANE                                                    
+12071234EL GRINE                                                    
+12071216EL AYOUN                                                    
+12091226BARROUKA                                                    
+12091293GARAAT ENNADHOUR                                            
+12091294EL FEKKA                                                    
+12091214MAJEN BEL ABBES                                             
+12011230KASSERINE NOUR                                              
+12011200KASSERINE                                                   
+12021233BOUZGUEM                                                    
+12021253BOULAABA                                                    
+12031210THALA                                                       
+12031211BOULAHNACHE                                                 
+12031224EDDACHRA                                                    
+12031231SIDI SHIL                                                   
+12031261THALA SUD                                                   
+12031235ZELFANE                                                     
+12041213BOUCHEBKA                                                   
+12041243GARAAT ENNAAME                                              
+12041242LAHOUACHE                                                   
+12041240FERIANA                                                     
+12041223CEKHIRAT                                                    
+12041215THELEPTE                                                    
+12051250SBEITLA                                                     
+12051251ECHRAYA                                                     
+12051252ERRHAYET                                                    
+12051255OUED MAIOU                                                  
+12051263CITE ESSOUROUR                                              
+12051254ZAOUIET BEN AMMAR                                           
+12051256HENCHIR EL ASSAL                                            
+12061273SIDI BRAHIM EZZAHER                                         
+12061271AIN KHMAISSIA                                               
+12061270SBIBA                                                       
+12081222SAHRAOUI                                                    
+12081212KHEMOUDA                                                    
+12081232BOU DIRYES                                                  
+12081220FOUSSANA                                                    
+12131279KASSERINE EZZOUHOUR                                         
+42034236BOUABDALLAH                                                 
+42034230SOUK EL AHAD                                                
+42034212OUM SOMAA                                                   
+42034213ZAOUIET ELANES                                              
+42034223FATNASSA                                                    
+42034231BECHRI                                                      
+42034283NEGGA                                                       
+42014237TELMINE                                                     
+42014274LIMAGUES                                                    
+42014233RABTA                                                       
+42014294SAIDANE                                                     
+42014273STAFTIMIA                                                   
+42014232TENBIB                                                      
+42014293MANSOURA KEBILI                                             
+42014280KEBILI BEYEZ                                                
+42024216DOUZ AOUINA                                                 
+42024260DOUZ                                                        
+42024261ZAAFRANE                                                    
+42024234EL GOLAA                                                    
+42024222NOUAIEL                                                     
+42024215DOUZ CHARGUI                                                
+42044210REGIME MAATOUG                                              
+42044264EL FAOUAR                                                   
+42054214JEMNA                                                       
+42054263JERSINE                                                     
+42054253BECHELLI                                                    
+42054243BLIDETTE                                                    
+42054242JANOURA                                                     
+42054224BAZMA                                                       
+42054211RAHMET                                                      
+42054200KEBILI                                                      
+71097114JERISSA                                                     
+71107123SIDI AHMED ESSALAH                                          
+71107113EL KALAA KHASBA                                             
+71037130KALAAT ESSENAM                                              
+71037132MAHJOUBA                                                    
+71037136BOUJABER                                                    
+71037135AIN SINAN                                                   
+71117100KEF                                                         
+71117134ZAAFRANE                                                    
+71117194OUED SOUANI                                                 
+71017117KEF OUEST                                                   
+71017121BARNOUSSA                                                   
+71087182ELLES                                                       
+71087180SERS                                                        
+71047153JAZZA                                                       
+71047151MENZEL SALEM                                                
+71047150TAJEROUINE                                                  
+71047133SIDI MTIR                                                   
+71027120ESSAKIA                                                     
+71027125AIN EL KARMA                                                
+71057110NEBEUR                                                      
+71057111OUED MELLEGUE                                               
+71057131SIDI KHIAR                                                  
+71057112TOUIREF                                                     
+71057116BAHRA                                                       
+71057141TELL GHOZLENE                                               
+71067170DAHMANI                                                     
+71077160EL KOSSOUR                                                  
+71077115ZITOUNA                                                     
+51045124TELALSA                                                     
+51045153RIADH BOUHLEL                                               
+51045160EL JEM                                                      
+51105122MENZEL HACHED                                               
+51105113HBIRA                                                       
+51105154EL MEHARZA                                                  
+51085123CHEHIMET                                                    
+51085120OULED CHAMAKH                                               
+51095190SIDI ALOUANE                                                
+51065155KSESBA                                                      
+51065134SIDI ZID                                                    
+51065145MANSOURA SOUASSI                                            
+51065144JEMAMLA                                                     
+51065140SOUASSI                                                     
+51015150MAHDIA REPUBLIQUE                                           
+51015121REJICHE                                                     
+51015131EL HAKAIMA                                                  
+51015111MAHDIA HIBOUN                                               
+51015100MAHDIA                                                      
+51015199MAHDIA EZZAHRA                                              
+51015141CHIBA                                                       
+51025126SALAKTA                                                     
+51025180KSOUR ESSAF                                                 
+51025116SIDI ASSAKER                                                
+51025136EL GHEDHABNA                                                
+51025146RECHARCHA                                                   
+51025189KSOUR ESSAF HACHED                                          
+51025115BRADAA                                                      
+51035170CHEBBA                                                      
+51055112KERKER                                                      
+51055110BOU MERDES                                                  
+51055125BOUHLEL SUD                                                 
+51075135NEFFATIA                                                    
+51075130CHORBANE                                                    
+51075133CHAHDA                                                      
+51095151ZORDA                                                       
+51095132SAKIET EL KHADEM                                            
+51095192ZELBA                                                       
+51095193OUED BEJA                                                   
+51115114MELLOULECHE                                                 
+51115117OULED JABALLAH                                              
+24072041CITE ETTADHAMEN                                             
+24072095ETTADHAMEN 2                                                
+24061134CHAOUAT                                                     
+24062075EL MANSOURA                                                 
+24061124JEDEIDA                                                     
+24062012EL HABIBIA                                                  
+24012010MANOUBA                                                     
+24012011DEN DEN                                                     
+24032021OUED ELLIL                                                  
+24032032CEBALAT BEN AMMAR                                           
+24032031ESSAIDA                                                     
+24032020SIDI THABET                                                 
+24032057CHORFECH                                                    
+24041116MORNAGUIA 20MARS                                            
+24041113EL MOUSSAIDINE                                              
+24041110MORNAGUIA                                                   
+24042028EL BASSATINE                                                
+24041142BORJ EL AMRI                                                
+24042071SIDI ALI HATTAB                                             
+24041153EL FEJJA                                                    
+24061133CHOUIGUI                                                    
+24061144EDDEKHILA                                                   
+24061143BORDJ ETTOUMI                                               
+24061114EL BATHAN                                                   
+24061130TEBOURBA                                                    
+41074135AJIM                                                        
+41074125EL GROO                                                     
+41074155GUELLALA                                                    
+41074150METHANIA                                                    
+41074166OUED ZEBIB                                                  
+41034192JALEL                                                       
+41034163CHAHBANIA                                                   
+41034160BENGARDANE                                                  
+41034193JMILA                                                       
+41034183EL OUERSANIA                                                
+41034153RAS JEDIR                                                   
+41024159CHOUAMMAKH                                                  
+41024122KSAR EL JIRA                                                
+41024132HALG JEMAL                                                  
+41024151KSAR DJEDID                                                 
+41024112OUERJIJEN                                                   
+41024110BENI KHEDACHE                                               
+41054115MELLITA JERBA                                               
+41054120JERBA AEROPORT                                              
+41054123OUALAGH                                                     
+41054156GHIZEN                                                      
+41054146ERRIADH                                                     
+41054195EL GACHIINE                                                 
+41054190SIDI ZAIED                                                  
+41054186MEZRAYA                                                     
+41054180JERBA                                                       
+41054179SIDI MEHREZ                                                 
+41054136SEDGHIANE                                                   
+41054185SOUANI                                                      
+41064133ROBBANA                                                     
+41064145CEDOUIKECH                                                  
+41064175EL MAY                                                      
+41064113OULED AMOR                                                  
+41064165MAHBOUBINE                                                  
+41064116MIDOUN                                                      
+41064176ARKOU                                                       
+41064199DAR JERBA                                                   
+41064126BENI MAAGUEL                                                
+41014130NOUVELLE MEDNINE                                            
+41014121KOUTINE                                                     
+41014111OUM ETTAMR                                                  
+41044137ZONE FRANCHE ZARZIS                                         
+41044154EL GHRABATTE                                                
+41044194HMADI EL GUEBLI                                             
+41044164GRIBIS                                                      
+41044144EL MOUENSA                                                  
+41044172JEDARIA                                                     
+41044124HICHEM                                                      
+41044173SOUIHEL                                                     
+41044174HASSI JERBI                                                 
+41044134CHAMAKH                                                     
+41044114ERRAJAA                                                     
+41044170ZARZIS                                                      
+41084117JORF                                                        
+41084191SIDI MAKHLOUF                                               
+41084181RAGOUBA                                                     
+41094100MEDENINE                                                    
+41094141BOUGHRARA                                                   
+41094131HASSI AMOR                                                  
+41094127MEDENINE PERSEVERAN                                         
+50035027ETTIAYRA                                                    
+50035043BIR TAIEB                                                   
+50035030JEMMEL KHEIREDDINE                                          
+50035013MENZEL KAMEL                                                
+50035020JEMMAL                                                      
+50035028ZAOUIA  KONTOCH                                             
+50035017EL HEDADRA                                                  
+50045016KSAR HELAL RIADH                                            
+50045070KSARHELLAL                                                  
+50105031KSIBET ELMEDIOUNI                                           
+50105063BOUDHER                                                     
+50105023TOUZA                                                       
+50105025BENANE                                                      
+50115015BOUHJAR                                                     
+50115035SAYADA                                                      
+50115099LAMTA                                                       
+50015011KHENIS                                                      
+50015000MONASTIR                                                    
+50015089CITE EL BASSATINE                                           
+50015079MONASTIR GARE                                               
+50015065MONASTIR AEROPORT                                           
+50015060MONASTIR REPUBLIQUE                                         
+50025052BOU OTHMAN                                                  
+50025041MENZEL KHIR                                                 
+50025010OUARDANINE                                                  
+50025042MESJED AISSA                                                
+50055066SOUKRINE                                                    
+50055080TEBOULBA                                                    
+50065034CHERAHIL                                                    
+50065054AMIRAT TOUEZRA                                              
+50065024MENZEL FERSI                                                
+50065044SIDI BENNOUR                                                
+50065050MOKNINE                                                     
+50065051MOKNINE EL JADIDA                                           
+50065071AMIRAT HAJJAJ                                               
+50065053AMIRAT FEHOUL                                               
+50075046MLICHETTE                                                   
+50075033MENZEL HAYET                                                
+50075045MZAOUGHA                                                    
+50075040ZERAMDINE                                                   
+50085026GHENADA                                                     
+50085062AMIRAT HATEM                                                
+50085014BENI HASSEN                                                 
+50095091CHRAF                                                       
+50095092BHIRA                                                       
+50095090BEKALTA                                                     
+50125061SIDI AMEUR                                                  
+50125012SAHLINE                                                     
+50135032MAZDOUR                                                     
+50135036MENZEL HARB                                                 
+50135021BEMBLA                                                      
+50135076MENARA                                                      
+50135022MENZEL ENNOUR                                               
+80128075DARCHAABANE PLAGE                                           
+80128011DAR CHABANE EL FEHR                                         
+80148025HAMMAM GHEZAZ                                               
+80148096HAMMAM JEBLI                                                
+80078036BOUKRIM                                                     
+80078016SIDI DAOUD                                                  
+80078045EL HAOUARIA                                                 
+80078026SAHEB JEBEL                                                 
+80078046ZAOUIET ELMAGAIEZ                                           
+80078074TAZOGHRANE                                                  
+80018000NABEUL                                                      
+80018062NABEUL THAMEUR                                              
+80028083RAININE                                                     
+80028080MENZEL TEMIME                                               
+80028054EL OUEDIANE                                                 
+80028015MENZEL HORR                                                 
+80028034LEBNA                                                       
+80028064SKALBA                                                      
+80038066GHARDYA                                                     
+80038013MAAMOURA                                                    
+80038060BENI KHIAR                                                  
+80038023SOMAA                                                       
+80048093AIN TEBOURNOK                                               
+80048030GROMBALIA                                                   
+80048084TURKI                                                       
+80048082KHANGUET HOJJAJ                                             
+80048012FONDOUK JEDID                                               
+80048092GROMBALIA EZZOUHOUR                                         
+80048052NIANOU                                                      
+80048022BELLI                                                       
+80058073MRAISSA                                                     
+80058020SOLIMAN                                                     
+80058051CHERIFET                                                    
+80058041KORBOUS                                                     
+80058063BOUCHARAY                                                   
+80068010MENZEL BOUZELFA                                             
+80068091ERRAHMA                                                     
+80088094MELLOUL                                                     
+80088035AZMOUR                                                      
+80088090KELIBIA                                                     
+80088055DAR ALLOUCHE                                                
+80088069KELIBIA CHARGUIA                                            
+80088065OUED EL KHATEF                                              
+80098033DIAR EL HOJJAJ                                              
+80098043BOUJERIDA                                                   
+80098076KORBA HACHED                                                
+80098024TAZARKA                                                     
+80098070KORBA                                                       
+80098053GARAAT SASSI                                                
+80098014BIR DRASSEN                                                 
+80108050HAMMAMET                                                    
+80108032SIDI JEDIDI                                                 
+80108042BIR BOUREGBA                                                
+80108056BARRAKET ESSAHEL                                            
+80118040BOU ARGOUB                                                  
+80118061SIDI DHAHER                                                 
+80138021BENI KHALLED                                                
+80138099ZAOUIET JEDIDI                                              
+80158089FARTOUNA                                                    
+80158044EL MIDA                                                     
+80158071TEFELLOUN                                                   
+30103073SBIH                                                        
+30103050CEKHIRA                                                     
+30123024CHAHAL                                                      
+30123034GRAIBA                                                      
+30073033BIR SALAH                                                   
+30073010HENCHA                                                      
+30073053SIDI HASSEN                                                 
+30073043EL GRABA                                                    
+30053056OULED BOUSMIR                                               
+30053086AJENGA                                                      
+30053026HAZEG                                                       
+30053016ELLOUZA                                                     
+30053080JEBINIANA                                                   
+30053077DOUAR ELLOUATA                                              
+30063015MELLITA                                                     
+30063070KERKENNA                                                    
+30063055EL KRATEN                                                   
+30063025OULED KACEM                                                 
+30063045ENNAJET                                                     
+30063035ELATAYA                                                     
+30113060MAHARES                                                     
+30113044NAKTA                                                       
+30043092BOUJARBOU                                                   
+30043014BOU THADI                                                   
+30043020MENZEL HEDI CHAKER                                          
+30123072MERKEZ CHAKER                                               
+30123071OUED CHAABOUNI                                              
+30123023OUED REMEL                                                  
+30123052CITE EL HABIB                                               
+30123064CITE EL BAHRI                                               
+30013039CAID MHAMED                                                 
+30013051MERKEZ ELALIA                                               
+30013049SFAX MAGHREB ARABE                                          
+30013065SFAX PORT                                                   
+30013089ENNIGROU                                                    
+30013099EL BOUSTEN                                                  
+30013032MERKEZ DEROUICHE                                            
+30013000SFAX                                                        
+30013027SFAX JADIDA                                                 
+30013069SFAX HACHED                                                 
+30013079HAI EL KHIRI                                                
+30033078EL HAJEB                                                    
+30033076MERKEZ ALOUI                                                
+30033074EL AOUABED                                                  
+30033062SIDI ABBES                                                  
+30033022MERKEZ KAMOUN                                               
+30033059ELKHAZZNETTE                                                
+30033042EL AIN                                                      
+30033083TYNA                                                        
+30033093MERKEZ OUALI                                                
+30033013MERKEZ KASSAS                                               
+30033012MERKEZ SAHNOUN                                              
+30033084TINA EL JADIDA                                              
+30083097RBAYA SISI DHAHAR                                           
+30083085OUM CHOUCHA                                                 
+30083040BIR ALI BEN KHALIFA                                         
+30083082EL GONDOUL                                                  
+30093037GARGOUR                                                     
+30093075MERKEZ SGHAR                                                
+30093030AGAREB                                                      
+30093057JEBARNA                                                     
+30143041MERKEZ CHIHYA                                               
+30143031MERKEZ B ACIDA                                              
+30143021SAKIET EZZIT                                                
+30143091SIDI SALAH                                                  
+30153054MERKEZ SEBAI                                                
+30153081ES SALTANIA                                                 
+30153011SAKIET EDDAIER                                              
+30153063EL KHALIJ                                                   
+30153094CITE BOURGUIBA                                              
+30153061SIDI MANSOUR                                                
+30153067MERKEZ LAJMI                                                
+30163066ESSAADI                                                     
+30163036EL AMRA                                                     
+30163046ESSALEM                                                     
+30163087BELIANA                                                     
+30163095DHRAA BEN ZIAD                                              
+91069169OULED MNASSER                                               
+91069120BENAOUN                                                     
+91059113BIR EL HAFFEY                                               
+91059123KSAR EL MZARA                                               
+91059126ENNOUAIEL                                                   
+91059159ESSALMA                                                     
+91049122CEBALA                                                      
+91039110JILMA                                                       
+91079114MENZEL BOUZAIENE                                            
+91079139EL GUELLEL                                                  
+91079124KHORCHEF                                                    
+91019133ELHAOUAMED                                                  
+91019112FAID                                                        
+91019171LESSOUDA                                                    
+91019141EL MAKAREM                                                  
+91029125CITE OULED BEL HEDI                                         
+91029111OUM EL ADHAM                                                
+91029127MERFEG EL FRAIOU                                            
+91029131EL HICHRIA                                                  
+91029132CITE EL KOUAFEL                                             
+91029100SIDI BOUZID                                                 
+91089158EL MECH                                                     
+91089149ENNASR                                                      
+91089144MABROUKA                                                    
+91089143BORJ EL KARMA                                               
+91089140MAKNASSY                                                    
+91099151EL FOUNI                                                    
+91099154EL BOUAA                                                    
+91099150MEZZOUNA                                                    
+91109115SAIDA                                                       
+91109170REGUEB                                                      
+91109172GOUBRAR                                                     
+91109173EL KHECHEM                                                  
+91109174ERRADHAA                                                    
+91119183EL ABBADETT                                                 
+91119180OULED HAFFOUZ                                               
+91119116DHOUIBET                                                    
+91129142REMILIA                                                     
+91129121SOUK JEDID                                                  
+61066116EL AROUSSA                                                  
+61066180BOU ARADA                                                   
+61066135BOUJLIDA                                                    
+61066183MEDIOUNA                                                    
+61076132HAMMAM BIADHA                                               
+61076120KRIB                                                        
+61076122DOUKHANIA                                                   
+61076125BORJ MESSAOUDI                                              
+61046152HABABSA SUD                                                 
+61046150ROHIA                                                       
+61096134BOUROUIS FILAHI                                             
+61096112LE KRIB GARE                                                
+61096113BOU ROUIS                                                   
+61026174SIDI SAID                                                   
+61026115BOU SAADIA                                                  
+61026173SODGA                                                       
+61026170BARGOU                                                      
+61036140MAKTAR                                                      
+61036151EL KHALSA                                                   
+61036142SNED HADDAD                                                 
+61056111EL AKHOUAT                                                  
+61056121EL AKSAB                                                    
+61056126SIDI AYED                                                   
+61056172AIN ZRIG                                                    
+61056110GAFOUR                                                      
+61086131EL MANSOURA                                                 
+61086133EL GARIAA                                                   
+61086141KESRA SUPERIEURE                                            
+61086114KESRA                                                       
+61106100SILIANA                                                     
+61106123EL KANTARA                                                  
+61106196RAS EL MA                                                   
+61106124SIDI HAMADA                                                 
+61106143ESSAFINA                                                    
+40054092AIN ERRAHMA                                                 
+40054010BOU FICHA                                                   
+40054082SIDI KHELIFA                                                
+40124060KALAA KEBIRA                                                
+40124063CHIAB                                                       
+40104021KALAA ESSEGHIRA                                             
+40114025SIDI EL HANI                                                
+40114026KROUSSIA                                                    
+40024023SOUSSE ERRIADH                                              
+40024031SOUSSE EZZOUHOUR                                            
+40024041KSIBET SOUSSE                                               
+40024081ZAOUIET SOUSSE                                              
+40034061SOUSSE IBN KHALDOUN                                         
+40034071KHEZAMA OUEST                                               
+40034051SOUSSE KHEZAMA                                              
+40014000SOUSSE                                                      
+40014059SOUSSE COLIS                                                
+40044016BENI KELTHOUM                                               
+40044070MSAKEN                                                      
+40044014EL KANAISS                                                  
+40044099MSAKEN EL KEBLIA                                            
+40044013MESSAIDINE                                                  
+40044024MSAKEN HAI JEDID                                            
+40044033MOUREDDINE                                                  
+40044015EL BORJINE                                                  
+40064030ENFIDA                                                      
+40064095AIN M DHAKER                                                
+40064035AIN EL GARCI                                                
+40064034CHEGARNIA                                                   
+40064032MENZEL BELOUAER                                             
+40074020KONDAR                                                      
+40084012HERGLA                                                      
+40094040SIDI BOU ALI                                                
+40094045ESSED NORD                                                  
+40094043MENZEL GARE                                                 
+40134089EL KANTAOUI                                                 
+40134011HAMMAMSOUSSE                                                
+40144042CHATT MERIAM                                                
+40144022AKOUDA                                                      
+32063225KIRCHAOU                                                    
+32063262BENI MEHIRA                                                 
+32063213KSAR OUN                                                    
+32063223SMAR                                                        
+32013217ESSAADA                                                     
+32013243OUED EL GHAR                                                
+32013282KSAR OULED SOLTAN                                           
+32013272EZZAHRA TATAOUINE                                           
+32013263TATAOUINE 7NOVEMBRE                                         
+32013233GATTOUFA                                                    
+32013214TLELET                                                      
+32023224EL HOURRIA                                                  
+32023251KSAR EL MOURABITINE                                         
+32023241EL FERCH                                                    
+32023261KSAR EL HADADA                                              
+32023220GHOUMRASSEN                                                 
+32023235OUED EL KHIL                                                
+32023271GUERMASSA                                                   
+32033244BIR AMIR                                                    
+32033286NEKRIF                                                      
+32033240REMADA                                                      
+32033245KAMBOUT                                                     
+32043212BIR LAHMAR                                                  
+32053253DEHIBAT                                                     
+32073200TATAOUINE                                                   
+32073215BENI BARKA                                                  
+32073274CHENINI NOUVELLE                                            
+32073232DOUIRET                                                     
+32073284BIR THLATHINE                                               
+32073222CHENINI FOUM TATAOU                                         
+32073221KSAR MEQUEBLA                                               
+32073293ROGBA                                                       
+32073252MAZTOURIA                                                   
+32073264RAS EL OUED                                                 
+32073242KSAR DEBBEB                                                 
+32073211TOUNKET                                                     
+22032260DEGACHE                                                     
+22032263BOUHLEL                                                     
+22032261SABAA ABAR                                                  
+22032224EL MAHASSEN                                                 
+22032214EL HAMMA DU DJERID                                          
+22032262DGHOUMES                                                    
+22052223HEZOUA                                                      
+22042253CHEBIKA DU JERID                                            
+22042212TAMEGHZA                                                    
+22042211DHAFIA                                                      
+22012200TOZEUR                                                      
+22012233BLED EL ADHAR                                               
+22012210TOZEUR CHOKRATSI                                            
+22012239CHTAOUA SAHRAOUI                                            
+22012241RAS DHRAA                                                   
+22012243CHORFA                                                      
+22022240NEFTA                                                       
+22022245BEN FARJALLAH                                               
+10021000TUNIS RP                                                    
+10021001TUNIS REPUBLIQUE                                            
+10021049TUNIS HACHED                                                
+10021069TUNIS THAMEUR                                               
+10021079TUNIS HALLES                                                
+10182089LE KRAM OUEST                                               
+10161074EL MOUROUJ 2                                                
+10162053KABARIA                                                     
+10152045CITE MHIRI                                                  
+10152079TUNIS  AERPORT                                              
+10151003CITE EL KHADRA                                              
+10101013EL MENZAH 9                                                 
+10011019TUNIS BAB BNET                                              
+10011059TUNIS ELHAFSIA                                              
+10011008TUNIS BAB MENARA                                            
+10111009EL OUERDIA                                                  
+10142023SIDI FATHALLAH                                              
+10061007TUNIS JABBARI                                               
+10062072CITE HELLAL                                                 
+10031029BAB SAADOUN GARE                                            
+10031075TUNIS BAB EL KHADRA                                         
+10031006TUNIS BAB SOUIKA                                            
+10041089TUNIS CHABBI                                                
+10051005EL OMRANE                                                   
+10072000BARDO                                                       
+10072009KSAR SAID                                                   
+10072017KHAZNADAR                                                   
+10082015KRAM                                                        
+10082060GOULETTE                                                    
+10092078MARSA SAF SAF                                               
+10092076LA MARSA ERRIADH                                            
+10101082CITE MAHRAJENE                                              
+10101004EL MENZAH                                                   
+10101002TUNIS BELVEDERE                                             
+10102092EL MANAR 2                                                  
+10122087EL HRAIRIA                                                  
+10122051EZZAHROUNI                                                  
+10131091EL OMRANE SUPERIEUR                                         
+10132062CITE IBN KHALDOUN                                           
+10131064CITE INTILAKA                                               
+10132052CITE EZZOUHOUR                                              
+10162066IBN SINAA                                                   
+10171095SIDI HASSINE                                                
+10182046SIDI  DAOUD                                                 
+10192016CARTHAGE                                                    
+10192085YASMINA CARTHAGE                                            
+10192025SALAMMBO                                                    
+10192026SIDI BOU SAID                                               
+10202042CITE ETTAHRIR                                               
+11041193BIR MCHARGA GARE                                            
+11041141BIR MECHERGA                                                
+11041131SMINJA                                                      
+11041123AIN ELASKER                                                 
+11041111JEBEL EL OUEST                                              
+11031154AIN EL BATTOUM                                              
+11031163BIR CHAOUCH                                                 
+11031160ENNADHOUR                                                   
+11061112JERADOU                                                     
+11061122ZRIBA                                                       
+11061152HAMMAM ZRIBA                                                
+11051115SAOUAF                                                      
+11011121EL MAGREN                                                   
+11011132OUED EZZIT                                                  
+11011100ZAGHOUAN                                                    
+11011155BIR HLIMA                                                   
+11021146SIDI AOUIDETTE                                              
+11021162BENT SAIDANE                                                
+11021194DHRA BEN JOUDER                                             
+11021140EL FAHS                                                     
+10011040TUNIS : RASSEMB. CONSTI. DEMOCRAT                           
+10011050TUNIS : TUNIS CHEQUES                                       
+10011070TUNIS :RADIO TUNIS TELEVISION                               
+10011080TUNIS CEDEX                                                 
+10011118ZAGHOUAN :BTE.PVE                                           
+10011119ZAGHOUAN :DIST.SPEC                                         
+41014149ZARZIS : BTE.PVE.DIST.SPEC                                  
+10011054AMILCAR                                                     
+70017064BOUZARIA                                                    
+10011046JBEL JLOUD                                                  
+40014062KALAA EL KEBIRA KSAR                                        
+70017027METHLINE                                                    
+10011023MOHAMED V                                                   
+10011020PREMIER MINISTERE                                           
+10012030SIJOUMI                                                     
+30013058SFAX : RTT                                                  
+40014019SOUSSE : DISTRIBUTION SPECIALE                              
+40014028SOUSSE : BTES PVE                                           
+60016002GABES NORD                                                  
+70017001BIZERTE BOUGATFA                                            
+70017002BIZERTE EL ANDALOUS                                         
+70017003BIZERTE EL JALA                                             
+10011022TUNIS BELVEDERE : DITR. SPEC.                               
+10011024EL MENZAH : DIST. SPEC.                                     
+10011026BAB SOUIKA : DIST. SPEC.                                    
+23011170SABALET MORNAG                                              
+20012048ARIANA BTES PRIVEES                                         
+41014140KSAR EL HALLOUF                                             
+60016053EL BARGHOUTHIA                                              
+70017052OUM HANI                                                    
+71017195MAHASSEN NORD                                               
+20012038EL NASR                                                     
+10011030TUNIS :AUTRES MINISTERES                                    
+91019184EL HANIA 102                                                
+30013002SFAX EL BOUSTEN                                             
+30013001SFAX MEDINA                                                 
+30013003SFAX CITE DES MARTYRS                                       
+40014001SOUSSE CORNICHE                                             
+40014002SOUSSE BOUHCINA                                             
+40014003SOUSSE IBN KHALDOUN                                         
+10011015TUNIS RP                                                    
+10011025TUNIS RP                                                    
+10011035TUNIS RP                                                    
+10011045TUNIS RP                                                    
+10011055TUNIS RP                                                    
+81018129AIN DRAHAM : BTE. PRIVEE ET DISTR.SPECI.                    
+20012049ARIANA /BTE PVE.DIST.SPEC                                   
+10012019LE BARDO :DIST.PVE                                          
+90019018BEJA : BTE PVE                                              
+90019019BEJA :DIST.SPEC                                             
+41014169BEN GUERDANE : BTE.PVE.DIST.SPEC                            
+70017018BIZERTE                                                     
+70017019BIZERTE :BTE PVE.                                           
+70017029BIZERTE                                                     
+40014049BOUFICHA :BTE.PVE..DIST.SPEC.                               
+80018049FONDOUK JEDID : BTE.PVE.DIST.SPEC                           
+60016018GABES : BTE.PVE                                             
+60016019GABES : ADMINISTRATION                                      
+60016029GABES : ORG.PUB.DIS.DES DEPOTS                              
+21012118GAFSA : BTE.PVE                                             
+21012119GAFSA : DIST.SPEC                                           
+80018029HAMMAMET :BTE.PVE.DIST.SPEC                                 
+80018039HAMMAMET : HOTELS                                           
+41014128JERBA : BTE.PVE                                             
+41014129JERBA : DIST.SPEC                                           
+31013118KAIROUAN : BTE.PVE                                          
+31013119KAIROUAN : DIST.SPEC                                        
+12011219KASSERINE : DIST.SPEC                                       
+71017118LE KEF : BTE.PVE                                            
+71017119LE KEF : DIST.SPEC                                          
+80018059KELIBIA : BTE.PVE.DIST.SPEC                                 
+51015118MAHDIA : BTE.PVE.                                           
+51015119MAHDIA : DIST.SPEC                                          
+61016129MAKTHAR : DIST. SPEC                                        
+24012029MANOUBA : BTE.PVE.DIST.SPEC                                 
+70017049MATEUR :BTE.PVE.DIST.SPEC                                   
+70017038MENZEL BOURGUIBA : BTE.PVE                                  
+70017039MENZEL BOURGUIBA : DIST.SPEC                                
+50015018MONASTIR : BTE.PVE.                                         
+50015019MONASTIR : DIST.SPEC                                        
+80018018NABEUL : BTE.PVE                                            
+70017059LA PECHERIE : BTE.PVE.DIST.SPEC                             
+32013259REMADA : BTE.PVE.DIST.SPEC                                  
+12011229SBEITLA / BTE.PVE.DIST.SPEC                                 
+30013018SFAX : BTE.PVE                                              
+30013019SFAX : ADMINISTRATIOSN                                      
+30013028SFAX : ADMINISTRATIONS                                      
+30013029SFAX : ORG.PUB.                                             
+30013038SFAX :ORG.PUB                                               
+30013068SFAX : DIS.DES PTS                                          
+91019118SIDI BOUZID :BTE.PVE                                        
+91019119SIDI BOUZID : DIST.SPEC.                                    
+61016118SILIANA : BTE.PVE                                           
+61016119SILIANA : DIST.SPEC                                         
+40014018SOUSSE : BTE.PVE                                            
+40014029SOUSSE : ORG.PUB.DIS.DES PTS                                
+40014039SOUSSE : HOTELS                                             
+81018139TABARKA : BTE PVE.DIST.SPEC                                 
+22012229TOZEUR :BTE.PVE.DIST.SPEC                                   
+10011010TUNIS : PRESIDENT DE LA REPUBLIQUE                          
+10011011TUNIS REPUBLIIQUE : BTE.PVE.DIST.SPEC                       
+10011012TUNIS BELVEDERE : BTE.PVE                                   
+10011014EL MENZAH : DIS.SPEC                                        
+10011016TUNIS BAB SOUIKA : DIS.SPEC                                 
+40014054SAHLOUL                                                     
+41014142MEDENINE EL MAARIFA                                         
+41014143MAGHRAOUIA                                                  
+41014161ESSAYEH                                                     
+41014182SARANDI                                                     
+40014017HAMMAM SOUSSEGHRABI                                         
+31013123EL HAOUAREB                                                 
+31013197EL AOUAID                                                   
+22012213TOZEUR AEROPORT                                             
+30013047BAB EL JEBLI                                                
+30013048SOUK EL FERIANI                                             
+12011283EL MZIRAA                                                   
+23012018RADES 7 NOVEMBRE                                            
+20012027BORJ EL BACCOUCH                                            
+20012047OUED ELLIL ENNAJET                                          
+20012067KHALED IBN OUALID                                           
+20012069ARIANA ECOLE                                                
+10012070LA MARSA                                                    
+24012086DAOUR HICHER                                                
+20012088SUPCOM                                                      
+20012094M NIHLA                                                     
+21012124CITE  ESSOUROUR                                             
+10011027BAB EL FALLA                                                
+10011053LES BERGES DU LAC                                           
+10011057GAMMARTH                                                    
+10011060TUNIS CENT                                                  
+10011067GOULETTE PORT                                               
+10011068ROMANA                                                      
+10011073MONTPLAISIR                                                 
+12011237CITE DES OUVRIERS                                           
+80018085SELTEN                                                      
+81018113JERIF EL GUEBLI                                             
+81018123AIN DRAHAM CHEBBI                                           
+81018133AIN KRIMA                                                   
+81018151SIDI ABID                                                   
+81018181TABARKA AEROPORT                                            
+90019072CHAOUACH                                                    
+70017044METHLINE                                                    
+70017051LA GALITE                                                   
+70017099HAI EL JALA                                                 
+71017122BORJ EL AIFA                                                
+71017172ZOUARINE                                                    
+71017181VIEUX SERS                                                  
+80018031BIR MROUA                                                   
+61016130CITE   ESSALAH                                              
+61016181EZZERIBA                                                    
+70017028BOUZARIA                                                    
+42014235TOMBAR                                                      
+51015127ESSAAD                                                      
+51015129MAHDIA SOUK                                                 
+51015143CHEHIMET KEBLIA                                             

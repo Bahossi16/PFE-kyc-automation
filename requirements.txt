@@ -1,0 +1,15 @@
+﻿# UIB AutoKYC Platform Dependencies
+flask>=2.3.0
+paddlepaddle>=2.5.0
+paddleocr>=2.7.0
+opencv-python>=4.8.0
+PyMuPDF>=1.23.0
+mysql-connector-python>=8.1.0
+xhtml2pdf>=0.2.11
+Pillow>=10.0.0
+numpy>=1.24.0
+scipy>=1.11.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+Faker>=19.0.0
+python-Levenshtein>=0.21.0

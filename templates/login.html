@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIB AutoKYC - Connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --uib-red: #D50000; 
+            --bg-color: #f4f7fa; 
+            --card-bg: #ffffff; 
+            --text-main: #2d3748; 
+            --text-muted: #718096; 
+            --border-light: #e2e8f0; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-color);
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(213,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(213,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 40px 40px; } }
+        
+        .lang-switch {
+            position: absolute; top: 25px; right: 30px;
+            font-size: 14px; font-weight: 600; z-index: 10;
+        }
+        .lang-switch a { color: var(--text-muted); text-decoration: none; padding: 0 5px; transition: 0.2s; cursor: pointer; }
+        .lang-switch a.active { color: var(--uib-red); }
+        .lang-switch a:hover:not(.active) { color: var(--text-main); }
+
+        .login-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 20px; padding: 50px 45px; width: 420px;
+            position: relative; z-index: 1;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04), 0 0 0 1px rgba(213,0,0,0.05);
+        }
+        .login-header { text-align: center; margin-bottom: 35px; }
+        .login-header img { height: 55px; border-radius: 8px; margin-bottom: 20px; }
+        .login-header h1 { color: var(--text-main); font-size: 22px; font-weight: 700; }
+        .login-header p { color: var(--text-muted); font-size: 13px; margin-top: 6px; }
+        
+        .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(213,0,0,0.2), transparent); margin-bottom: 30px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; color: var(--text-muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        
+        .input-wrapper { position: relative; }
+        .input-wrapper i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #a0aec0; font-size: 14px; }
+        
+        .form-group input {
+            width: 100%; background: #f8fafc; border: 1px solid var(--border-light);
+            border-radius: 10px; padding: 13px 14px 13px 42px; color: var(--text-main);
+            font-family: 'Outfit', sans-serif; font-size: 14px; transition: all 0.3s ease; outline: none;
+        }
+        .form-group input:focus { background: #ffffff; border-color: var(--uib-red); box-shadow: 0 0 0 3px rgba(213,0,0,0.1); }
+        .form-group input::placeholder { color: #cbd5e0; }
+        
+        .error-msg { background: rgba(213,0,0,0.08); border: 1px solid rgba(213,0,0,0.2); border-radius: 8px; padding: 10px 14px; color: var(--uib-red); font-size: 13px; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; font-weight: 500; }
+        
+        .btn-login { width: 100%; background: var(--uib-red); color: white; border: none; border-radius: 10px; padding: 14px; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
+        .btn-login:hover { background: #b71c1c; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(213,0,0,0.2); }
+        
+        .login-footer { text-align: center; margin-top: 25px; color: var(--text-muted); font-size: 11px; }
+        .badge-secure { display: inline-flex; align-items: center; gap: 5px; background: #f8fafc; border: 1px solid var(--border-light); border-radius: 20px; padding: 4px 10px; font-size: 10px; color: var(--text-muted); margin-top: 8px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <a onclick="setLang('fr')" id="btn-fr" class="active">FR</a> | <a onclick="setLang('en')" id="btn-en">EN</a>
+    </div>
+
+    <div class="login-card">
+        <div class="login-header">
+            <img src="{{ url_for('static', filename='uib_logo.jpg') }}" alt="UIB Logo">
+            <h1>UIB AutoKYC <span style="font-weight: 300; color: var(--text-muted);">Vision AI</span></h1>
+            <p id="t-subtitle">Systeme de Controle KYC - Acces Restreint</p>
+        </div>
+
+        <div class="divider"></div>
+
+        {% if error %}
+        <div class="error-msg">
+            <i class="fa-solid fa-circle-exclamation"></i> {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label id="t-label-id">Identifiant Agent</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="ex: b.hassan" required autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label id="t-label-pass">Mot de passe</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-login">
+                <i class="fa-solid fa-right-to-bracket"></i> &nbsp;<span id="t-btn-login">Se connecter</span>
+            </button>
+        </form>
+
+        <div class="login-footer">
+            <div>UIB &copy; 2026 - Data Project Office</div>
+            <div class="badge-secure">
+                <i class="fa-solid fa-shield-halved"></i> <span id="t-secure">Connexion chiffree - On-Premise</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const texts = {
+            fr: {
+                subtitle: "Systeme de Controle KYC - Acces Restreint",
+                labelId: "Identifiant Agent",
+                labelPass: "Mot de passe",
+                btnLogin: "Se connecter",
+                secure: "Connexion chiffree - On-Premise"
+            },
+            en: {
+                subtitle: "KYC Control System - Restricted Access",
+                labelId: "Agent ID",
+                labelPass: "Password",
+                btnLogin: "Log In",
+                secure: "Encrypted connection - On-Premise"
+            }
+        };
+
+        function setLang(lang) {
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            document.getElementById('t-subtitle').innerText = texts[lang].subtitle;
+            document.getElementById('t-label-id').innerText = texts[lang].labelId;
+            document.getElementById('t-label-pass').innerText = texts[lang].labelPass;
+            document.getElementById('t-btn-login').innerText = texts[lang].btnLogin;
+            document.getElementById('t-secure').innerText = texts[lang].secure;
+        }
+    </script>
+</body>
+</html>
